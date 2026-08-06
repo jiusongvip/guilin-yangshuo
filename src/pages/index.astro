@@ -1,0 +1,423 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import CardLink from "../components/CardLink.astro";
+import Map from "../components/Map.astro";
+import Faq from "../components/Faq.astro";
+
+const faqItems = [
+  { q: "Are Guilin and Yangshuo the same place?", a: "No. Guilin is the city with the airport and train station. Yangshuo is a small town about 65 km south — that's where the iconic karst scenery is. Most people fly into Guilin and head straight to Yangshuo. Think of Guilin as the gateway and Yangshuo as the destination." },
+  { q: "How many days do I need?", a: "Three days is the sweet spot: Day 1 — arrive Guilin, see the lakes and Elephant Trunk Hill. Day 2 — Li River cruise to Yangshuo, settle in. Day 3 — bike the countryside, hike Moon Hill. Two days works if you're rushed but misses the countryside. Five days lets you add Longji Rice Terraces. We have itineraries for all three lengths." },
+  { q: "How much does a trip cost?", a: "For 3 days per person: budget travelers $60-150 (hostels, street food, bus), mid-range $225-435 (comfortable hotels, restaurants, Li River cruise), luxury $720-1,590 (resorts, private transfers). These are real 2026 prices in USD. China is generally excellent value — the same scenery experience would cost 3-4x in Europe." },
+  { q: "Is Guilin worth visiting?", a: "For most travelers, yes. If you love dramatic natural scenery and outdoor activities, it's one of China's highlights — the karst landscape is genuinely world-class. If you prefer big-city energy, cutting-edge architecture, or off-the-beaten-path authenticity, you might find it too developed. Read our full honest assessment." },
+  { q: "What's the best way to get from Guilin to Yangshuo?", a: "Take the Li River cruise one way (4 hours, ~360 RMB) — it's the experience itself, not just transport. For the return, use a direct bus (1.5h, 25 RMB) or taxi (1.5h, 150-200 RMB). The cruise only runs Guilin-to-Yangshuo direction, so plan accordingly." },
+  { q: "When should I visit?", a: "April-May and September-October are ideal: pleasant temperatures, clear skies, great light for photos. Avoid October 1-7 (Golden Week) — hotels triple in price and viewpoints are packed. Summer (June-August) is hot and humid but the landscape is lush. Winter (Dec-Feb) is quiet and misty — beautiful in a different way." },
+  { q: "Do I need a visa for China?", a: "Most visitors need a tourist (L) visa. US citizens pay $140 for a 10-year multiple-entry visa. Some nationalities qualify for 144-hour transit without a visa when entering through certain cities. Check our visa guide for your specific situation — we break it down by nationality." },
+  { q: "Is Yangshuo safe?", a: "Very safe. Violent crime against tourists is extremely rare. The main risks are overpaying for tours (book through your hotel or official ticket offices), petty scams at transport hubs (ignore touts), and getting lost on unmarked rural roads (download offline maps). Common travel sense is all you need." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<Layout title="Guilin & Yangshuo Travel Guide 2026 — Tips & Itineraries" description="Plan your Guilin & Yangshuo trip with our honest guide. 3-day itinerary, Li River tips, real 2026 costs, visa advice — no tour sales.">
+
+  <!-- 1. Hero -->
+  <Section class="pt-12 md:pt-20 pb-16 md:pb-24">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div class="max-w-xl">
+        <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">Updated August 2026 · Independent · No Tour Sales</p>
+        <h1 class="text-4xl font-bold tracking-tight text-stone-900 md:text-5xl lg:text-6xl">
+          Guilin & Yangshuo
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-stone-500 md:text-xl">
+          The landscape that inspired every Chinese painting — and how to see it without a tour group. Independent advice, real 2026 prices, no fluff.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-6 text-sm text-stone-500">
+          <span class="flex items-center gap-1.5">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>
+            3-5 day trip
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="10" rx="2"/><line x1="8" y1="3" x2="8" y2="13"/><line x1="1" y1="7" x2="15" y2="7"/></svg>
+            $20-$530/day
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2a6 6 0 100 12A6 6 0 008 2z"/><path d="M8 5v3l2 2"/></svg>
+            Best: Apr-May & Sep-Oct
+          </span>
+        </div>
+
+<div class="mt-8 flex flex-wrap gap-4">
+          <a href="/guilin-yangshuo-itinerary-3-day" class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-light">
+            Get the 3-Day Plan
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+          </a>
+          <a href="/guilin-trip-cost-calculator" class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-100">
+            Calculate My Cost
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-stone-200">
+        <img src="/images/hero-li-river.webp" alt="Li River karst mountains at sunrise — Guilin Yangshuo landscape" class="h-full w-full object-cover" loading="eager" width="800" height="600" />
+      </div>
+    </div>
+  </Section>
+
+  <!-- 2. Guilin vs Yangshuo + Spatial Map -->
+  <section id="start-here" class="border-t border-stone-200 bg-stone-100/50 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">First Things First</p>
+      <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Guilin vs Yangshuo — What's the Difference?</h2>
+      <p class="mt-3 max-w-2xl text-stone-500">Most first-time visitors confuse these two. They're not the same place. Guilin is the gateway city with the airport and train station. Yangshuo is the small riverside town 65 km south where the real scenery lives. You fly into Guilin and spend your time in Yangshuo. Here's how they compare:</p>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-stone-200 bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-stone-50 text-xs font-semibold uppercase tracking-wider text-stone-400">
+            <tr><th class="px-6 py-4"></th><th class="px-6 py-4">Guilin</th><th class="px-6 py-4">Yangshuo</th></tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100">
+            <tr><td class="px-6 py-4 font-medium text-stone-700">What it is</td><td class="px-6 py-4 text-stone-600">Mid-size city, regional transport hub</td><td class="px-6 py-4 text-stone-600">Small town surrounded by karst peaks</td></tr>
+            <tr class="bg-stone-50/50"><td class="px-6 py-4 font-medium text-stone-700">Vibe</td><td class="px-6 py-4 text-stone-600">Functional gateway, pleasant lakes, city parks</td><td class="px-6 py-4 text-stone-600">Outdoor paradise — cycling, climbing, bamboo rafts</td></tr>
+            <tr><td class="px-6 py-4 font-medium text-stone-700">Known for</td><td class="px-6 py-4 text-stone-600">Elephant Trunk Hill, Reed Flute Cave, rice noodles</td><td class="px-6 py-4 text-stone-600">Li River, Moon Hill, Ten Mile Gallery, West Street</td></tr>
+            <tr class="bg-stone-50/50"><td class="px-6 py-4 font-medium text-stone-700">Stay here if...</td><td class="px-6 py-4 text-stone-600">You need easy airport/train access or want city comforts</td><td class="px-6 py-4 text-stone-600">You want to wake up to karst peaks outside your window</td></tr>
+            <tr><td class="px-6 py-4 font-medium text-stone-700">Best for how long?</td><td class="px-6 py-4 text-stone-600">1 night — arrive, see a park, leave the next morning</td><td class="px-6 py-4 text-stone-600">2-4 nights — the main event of your trip</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <Map />
+      <div class="mt-4 flex gap-4 text-sm">
+        <a href="/guilin-travel-guide" class="text-accent font-medium hover:underline">Full Guilin guide</a>
+        <span class="text-stone-300">|</span>
+        <a href="/yangshuo-travel-guide" class="text-accent font-medium hover:underline">Full Yangshuo guide</a>
+        <span class="text-stone-300">|</span>
+        <a href="/guilin-to-yangshuo" class="text-accent font-medium hover:underline">How to get between them</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Visual Itinerary Timeline (NEW) -->
+  <Section>
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">At a Glance</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Your 3-Day Trip at a Glance</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">Here's what a classic trip looks like. Each day links to a detailed morning-to-evening plan with exact timings and transport options.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="group relative rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">1</div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-accent/60">Day 1</p>
+            <p class="font-semibold text-stone-900">Arrive Guilin</p>
+          </div>
+        </div>
+        <ul class="space-y-2 text-sm leading-relaxed text-stone-500">
+          <li>Fly into Guilin Liangjiang Airport (KWL)</li>
+          <li>Walk Shanhu & Ronghu Lakes in the city center</li>
+          <li>Visit Elephant Trunk Hill at sunset</li>
+          <li>Dinner: Guilin rice noodles (10 RMB)</li>
+        </ul>
+        <a href="/guilin-travel-guide" class="mt-4 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Guilin city guide</a>
+      </div>
+      <div class="group relative rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">2</div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-accent/60">Day 2</p>
+            <p class="font-semibold text-stone-900">Li River to Yangshuo</p>
+          </div>
+        </div>
+        <ul class="space-y-2 text-sm leading-relaxed text-stone-500">
+          <li>Morning: Li River cruise (4 hours, 360 RMB)</li>
+          <li>Pass the iconic 20 RMB note viewpoint</li>
+          <li>Arrive Yangshuo, settle into your hotel</li>
+          <li>Evening: explore West Street for dinner & drinks</li>
+        </ul>
+        <a href="/li-river-cruise" class="mt-4 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Li River cruise guide</a>
+      </div>
+      <div class="group relative rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">3</div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-accent/60">Day 3</p>
+            <p class="font-semibold text-stone-900">Countryside by Bike</p>
+          </div>
+        </div>
+        <ul class="space-y-2 text-sm leading-relaxed text-stone-500">
+          <li>Rent a bike (30 RMB/day) and ride the Ten Mile Gallery</li>
+          <li>Hike up Moon Hill — 800 steps to the summit arch</li>
+          <li>Yulong River bamboo raft (afternoon, quieter)</li>
+          <li>Optional: rock climbing or cooking class</li>
+        </ul>
+        <a href="/yangshuo-travel-guide" class="mt-4 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Yangshuo activities</a>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="/guilin-yangshuo-itinerary-3-day" class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-light">
+        Full 3-Day Itinerary
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+      </a>
+      <div class="mt-3 flex justify-center gap-4 text-sm">
+        <a href="/guilin-yangshuo-itinerary-2-day" class="text-stone-400 hover:text-accent transition-colors">2-day plan</a>
+        <span class="text-stone-300">|</span>
+        <a href="/guilin-yangshuo-itinerary-5-day" class="text-stone-400 hover:text-accent transition-colors">5-day plan</a>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 4. How to Plan -->
+  <Section class="border-t border-stone-200 bg-stone-100/50">
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">Trip Planning</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">How to Plan Your Trip</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">Four things to figure out, in order. You can sort this out in under an hour.</p>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="/best-time-to-visit-guilin" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <span class="text-xs font-bold uppercase tracking-wider text-accent/60">Step 1</span>
+        <h3 class="mt-3 text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">Pick your dates</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">April-May and September-October are ideal. Avoid Golden Week (first week of October) — triple prices, packed viewpoints.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Month-by-month guide</span>
+      </a>
+      <a href="/guilin-yangshuo-itinerary-3-day" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <span class="text-xs font-bold uppercase tracking-wider text-accent/60">Step 2</span>
+        <h3 class="mt-3 text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">Copy the itinerary</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Day 1: arrive Guilin. Day 2: Li River cruise to Yangshuo. Day 3: countryside by bike. Detailed morning-to-evening plan included.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">3-day plan</span>
+      </a>
+      <a href="/guilin-yangshuo-trip-cost" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <span class="text-xs font-bold uppercase tracking-wider text-accent/60">Step 3</span>
+        <h3 class="mt-3 text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">Know the cost</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Budget: $20-50/day. Mid-range: $75-145/day. Luxury: $240-530/day. Real 2026 prices — no vague estimates.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Full cost breakdown</span>
+      </a>
+      <a href="/china-visa" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <span class="text-xs font-bold uppercase tracking-wider text-accent/60">Step 4</span>
+        <h3 class="mt-3 text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">Sort out logistics</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Visa ($140 for US citizens), Alipay setup, VPN, eSIM — sort these before you fly. We'll walk you through each one.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">China prep checklist</span>
+      </a>
+    </div>
+  </Section>
+
+  <!-- 5. Interactive Tools (MOVED UP) -->
+  <Section>
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">Free Tools</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Plan Smarter in Minutes</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">Three free interactive tools — no sign-up, no email. Stuff the big travel platforms don't offer.</p>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/china-trip-builder" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="5" r="2"/><circle cx="5" cy="15" r="2"/><circle cx="15" cy="15" r="2"/><path d="M9 6.5L6 13.5M10 7l1 3m-1-3l3 7M14 13.5l-1-3"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">China Trip Builder</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Pick your cities in order and get a suggested multi-city route with day counts and highlights.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Build your route</span>
+      </a>
+      <a href="/guilin-trip-cost-calculator" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="16" height="12" rx="2"/><line x1="10" y1="4" x2="10" y2="16"/><line x1="2" y1="9" x2="18" y2="9"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">Cost Calculator</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Select your travel style, days, and activities — get a personalized cost estimate in seconds.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Calculate your trip</span>
+      </a>
+      <a href="/china-packing-list" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8l3 5-7 9-7-9 3-5z"/><line x1="10" y1="3" x2="10" y2="12"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">Packing List Generator</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Choose your season and activities for a customized checklist with everything you need.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Generate your list</span>
+      </a>
+    </div>
+  </Section>
+
+  <!-- 6. Must-Do Experiences -->
+  <Section class="border-t border-stone-200 bg-stone-100/50">
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">The Highlights</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Must-Do Experiences</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">Eight things every visitor should have on their list. Each one has a full guide with prices, best times, and how to avoid the crowds.</p>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <CardLink href="/li-river-cruise" image="/images/li-river.webp" title="Li River Cruise" description="The classic. 4 hours through the most dramatic karst scenery in China — bamboo rafts or motor boats." />
+      <CardLink href="/yulong-river-bamboo-raft" image="/images/yulong.webp" title="Yulong River Raft" description="A quieter bamboo raft on a tributary. Past ancient stone bridges and water buffalo grazing on the banks." />
+      <CardLink href="/moon-hill" image="/images/moon-hill.webp" title="Hike Moon Hill" description="800 steps up through a natural stone arch. The best 360-degree panorama in Yangshuo at the summit." />
+      <CardLink href="/ten-mile-gallery" image="/images/ten-mile.webp" title="Ten Mile Gallery" description="The best bike ride in China. 10 km of flat road flanked by karst peaks, rice paddies, and tiny villages." />
+      <CardLink href="/yangshuo-cycling-routes" image="/images/yangshuo.webp" title="Cycling Routes" description="Three self-guided bike routes — 10km classic, 25km riverside loop, 40km explorer. Turn-by-turn directions and rest stops." />
+      <CardLink href="/xingping-ancient-town" image="/images/xingping.webp" title="Xingping Ancient Town" description="The village on the 20 RMB banknote. Walk the old street, climb Laozhai Mountain for the iconic river bend view." />
+      <CardLink href="/longji-rice-terraces" image="/images/longji.webp" title="Longji Rice Terraces" description="650-year-old terraces carved into mountains. Flooded and mirror-like in spring, golden in autumn." />
+      <CardLink href="/guilin-food" image="/images/guilin-food.webp" title="Guilin Rice Noodles" description="The dish that defines the region. A 10 RMB bowl of rice noodles with beef, pickled beans, peanuts, and chili." />
+      <CardLink href="/guilin-yangshuo-photo-spots" image="/images/photo-spots.webp" title="Best Photo Spots" description="12 exact locations with GPS coordinates, best shooting times, and recommended focal lengths." />
+    </div>
+  </Section>
+
+  <!-- 7. Still Deciding? -->
+  <Section>
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">Still Deciding?</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Before You Commit</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">Honest answers to the three questions every traveler asks. No marketing spin.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <a href="/is-guilin-worth-visiting" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">Is Guilin worth visiting?</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">For nature lovers and outdoor enthusiasts, yes — it's one of China's best destinations. For big-city travelers, you might find it too quiet. Full pros and cons inside.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Read the honest assessment</span>
+      </a>
+      <a href="/guilin-yangshuo-trip-cost" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">How much does it cost?</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">A 3-day trip: $60-150 (budget), $225-435 (mid-range), $720-1,590 (luxury). All prices in USD, verified 2026. Includes hidden costs like visa and VPN.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">Full budget breakdown</span>
+      </a>
+      <a href="/guilin-in-your-china-trip" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">How do I fit it into my China trip?</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Beijing -> Xi'an -> Guilin -> Shanghai is the classic circuit. Or: Hong Kong -> Guilin (3.5h train) -> Chengdu. Three multi-city routes with flight times included.</p>
+        <span class="mt-3 inline-flex items-center text-xs font-medium text-accent group-hover:underline">See multi-city routes</span>
+      </a>
+    </div>
+  </Section>
+
+  <!-- 8. When to Visit Preview (NEW) -->
+  <Section class="border-t border-stone-200 bg-stone-100/50">
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">Timing</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">When to Visit Guilin & Yangshuo</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">The seasons change everything — from misty karst dreamscapes to lush green rice paddies to golden autumn light. Here's a quick overview.</p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-2xl border border-stone-200 bg-white p-5">
+        <p class="text-2xl mb-2">Spring</p>
+        <p class="text-sm font-semibold text-stone-900">Mar–May</p>
+        <p class="mt-1 text-xs font-medium text-accent">Best time overall</p>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">15–25°C, clear skies, green landscape. April and May are ideal with comfortable temps and low rainfall.</p>
+      </div>
+      <div class="rounded-2xl border border-stone-200 bg-white p-5">
+        <p class="text-2xl mb-2">Summer</p>
+        <p class="text-sm font-semibold text-stone-900">Jun–Aug</p>
+        <p class="mt-1 text-xs font-medium text-amber-600">Hot but lush</p>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">28–35°C, humid, vibrant green. The landscape is at its most dramatic, but be ready for heat and afternoon storms.</p>
+      </div>
+      <div class="rounded-2xl border border-stone-200 bg-white p-5">
+        <p class="text-2xl mb-2">Autumn</p>
+        <p class="text-sm font-semibold text-stone-900">Sep–Nov</p>
+        <p class="mt-1 text-xs font-medium text-accent">Best for photography</p>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">18–28°C, dry crisp air, golden light. September and October rival spring. Avoid the first week of October (Golden Week).</p>
+      </div>
+      <div class="rounded-2xl border border-stone-200 bg-white p-5">
+        <p class="text-2xl mb-2">Winter</p>
+        <p class="text-sm font-semibold text-stone-900">Dec–Feb</p>
+        <p class="mt-1 text-xs font-medium text-stone-400">Quiet and misty</p>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">5–15°C, misty mornings, few tourists. Beautiful in a moody, atmospheric way. Hotels are cheap and viewpoints empty.</p>
+      </div>
+    </div>
+    <div class="mt-6">
+      <a href="/best-time-to-visit-guilin" class="inline-flex items-center text-sm font-medium text-accent hover:underline">Full month-by-month guide with rainfall and temperature charts</a>
+    </div>
+  </Section>
+
+  <!-- 9. Where to Stay -->
+  <Section>
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">Accommodation</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Where to Stay</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">Most visitors stay one night in Guilin (for transport convenience) and 2-3 nights in Yangshuo (for the scenery). Here's how to pick:</p>
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      <div class="rounded-2xl border border-stone-200 bg-white p-8">
+        <h3 class="text-xl font-semibold text-stone-900">Yangshuo — 3 Areas</h3>
+        <ul class="mt-4 space-y-3 text-sm text-stone-600">
+          <li><strong class="text-stone-700">West Street:</strong> Central, lively, walking distance to everything. Noisy until midnight. Budget guesthouses from 100 RMB.</li>
+          <li><strong class="text-stone-700">Countryside (2-5 km out):</strong> Wake up to karst peaks outside your window. Need a bike to get around. Best value for scenery.</li>
+          <li><strong class="text-stone-700">Yulong River Valley:</strong> Peaceful, luxury resorts, riverside views. Banyan Tree and Alila are here. 8 km from town.</li>
+        </ul>
+        <a href="/where-to-stay-in-yangshuo" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:underline">Browse Yangshuo areas</a>
+      </div>
+      <div class="rounded-2xl border border-stone-200 bg-white p-8">
+        <h3 class="text-xl font-semibold text-stone-900">Guilin — 3 Areas</h3>
+        <ul class="mt-4 space-y-3 text-sm text-stone-600">
+          <li><strong class="text-stone-700">Shanhu & Ronghu Lakes:</strong> City center, pretty lake views, walkable. Best for a one-night stay. Hotels from 200 RMB.</li>
+          <li><strong class="text-stone-700">Near Train Station:</strong> Functional, convenient for late arrivals or early trains. Not scenic — purely practical.</li>
+          <li><strong class="text-stone-700">Li River Riverside:</strong> North of town, quiet with mountain views. Need a taxi to get anywhere. Good for a relaxing arrival night.</li>
+        </ul>
+        <a href="/where-to-stay-in-guilin" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:underline">Browse Guilin areas</a>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 10. Getting There -->
+  <Section class="border-t border-stone-200 bg-stone-100/50">
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">Transport</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">How to Get There and Get Around</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">Guilin has an airport (KWL) with direct flights from major Chinese cities and Asian hubs. High-speed trains connect to Guangzhou (2.5h), Shenzhen, and Hong Kong.</p>
+    <div class="mt-10 grid gap-8 md:grid-cols-3">
+      <div class="rounded-2xl border border-stone-200 bg-white p-6">
+        <h3 class="font-semibold text-stone-900">By Air</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Guilin Liangjiang Airport (KWL). Direct flights from Beijing (3h), Shanghai (2.5h), Guangzhou (1h), Hong Kong (1.5h), Chengdu (1.5h), and major Asian cities. Airport is 30 km from Guilin city.</p>
+      </div>
+      <div class="rounded-2xl border border-stone-200 bg-white p-6">
+        <h3 class="font-semibold text-stone-900">By Train</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">High-speed trains to Guilin North and Guilin West stations. Guangzhou South (2.5h, ~170 RMB), Shenzhen North (3h), Hong Kong West Kowloon (3.5h). Book on Trip.com or 12306.cn.</p>
+      </div>
+      <div class="rounded-2xl border border-stone-200 bg-white p-6">
+        <h3 class="font-semibold text-stone-900">Guilin to Yangshuo</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Four options: Li River cruise (4h, 360 RMB — the scenic classic), direct bus (1.5h, 25 RMB — fastest), taxi (1.5h, 150-200 RMB), or private transfer. Most visitors cruise one way and bus back.</p>
+      </div>
+    </div>
+    <div class="mt-6 flex gap-4 text-sm">
+      <a href="/guilin-to-yangshuo" class="text-accent font-medium hover:underline">Full transport guide</a>
+      <span class="text-stone-300">|</span>
+      <a href="/how-to-book-china-trains" class="text-accent font-medium hover:underline">How to book trains</a>
+    </div>
+  </Section>
+
+  <!-- 11. China Travel Essentials -->
+  <Section>
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">China Prep</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">China Travel Essentials</h2>
+    <p class="mt-3 max-w-2xl text-stone-500">The stuff that stresses people out about visiting China. We've done the research so you don't have to.</p>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/china-visa" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">China Visa Guide</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Who needs one, how to apply, 144-hour transit without visa option for 53 countries. Tourist visa costs $140 for US citizens, takes 4-7 business days.</p>
+      </a>
+      <a href="/alipay-wechat-setup" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">Mobile Payments Setup</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Alipay now supports foreign cards and phone numbers. Set it up before you fly — identity verification takes 1-2 days. Step-by-step guide.</p>
+      </a>
+      <a href="/china-internet-guide" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">Internet and eSIM</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Travel eSIMs route through Hong Kong — no VPN needed for Instagram and WhatsApp. $5-15 for 7-day plans. Local SIMs need a VPN.</p>
+      </a>
+      <a href="/china-internet-vpn" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">VPN Setup</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">Which VPNs actually work in China in 2026. Install and test at least two options before you leave home. Ones that work: LetsVPN, Astrill.</p>
+      </a>
+      <a href="/survival-chinese-phrases" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">Survival Chinese</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">"Bu yao" (I don't want it) is the most useful phrase for declining vendors. Plus: ordering food, asking prices, finding toilets. 25 phrases with audio-friendly pinyin.</p>
+      </a>
+      <a href="/guilin-travel-mistakes" class="group rounded-2xl border border-stone-200 bg-white p-6 transition-shadow hover:shadow-md">
+        <h3 class="text-base font-semibold text-stone-900 group-hover:text-accent transition-colors">Mistakes to Avoid</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-500">15 things travelers get wrong: booking the wrong river section, not carrying cash, trusting touts at stations, arriving during Golden Week.</p>
+      </a>
+    </div>
+  </Section>
+
+  <!-- 12. FAQ with Jump Links + Schema -->
+  <Section class="border-t border-stone-200 bg-stone-100/50">
+    <p class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-2">Quick Answers</p>
+    <h2 class="text-2xl font-bold tracking-tight md:text-3xl">Frequently Asked Questions</h2>
+    <div class="mt-6 mb-10 flex flex-wrap gap-2">
+      {faqItems.map((item, i) => (
+        <a href={`#faq-${i}`} class="rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs text-stone-500 transition-colors hover:border-accent hover:text-accent">{item.q}</a>
+      ))}
+    </div>
+    <div class="max-w-3xl">
+      <Faq items={faqItems} jumpLinks={true} />
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  </Section>
+
+</Layout>

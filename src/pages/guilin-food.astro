@@ -1,0 +1,128 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+---
+<DetailLayout title="Guilin Food Guide"
+  image="/images/guilin-food.webp" subtitle="What to eat, where to find the best bowls, and how to order without speaking Chinese — your complete guide to dining in Guilin and Yangshuo."
+  description="Complete Guilin Yangshuo food guide: best rice noodle shops, beer fish restaurants, vegetarian options, how to order in Chinese, and night market tips.">
+
+  <div class="rounded-2xl border border-stone-200 bg-stone-50 p-6 mb-10">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">In This Guide</p>
+    <ul class="mt-2 space-y-1 text-sm text-stone-600">
+      <li><a href="#rice-noodles" class="text-accent hover:underline">Guilin Rice Noodles - the dish that defines the region</a></li>
+      <li><a href="#beer-fish" class="text-accent hover:underline">Yangshuo Beer Fish - the signature dinner</a></li>
+      <li><a href="#more-dishes" class="text-accent hover:underline">5 more regional dishes worth trying</a></li>
+      <li><a href="#vegetarian" class="text-accent hover:underline">Vegetarian & vegan survival guide</a></li>
+      <li><a href="#how-to-order" class="text-accent hover:underline">How to order food without speaking Chinese</a></li>
+      <li><a href="#night-market" class="text-accent hover:underline">Yangshuo night market: where and what to eat</a></li>
+      <li><a href="#local-tips" class="text-accent hover:underline">Local dining etiquette & safety tips</a></li>
+    </ul>
+  </div>
+
+  <h2 id="rice-noodles">Guilin Rice Noodles (Mifen)</h2>
+  <p>This is the soul of Guilin cuisine. A bowl of white rice noodles served in a light broth, topped with sliced beef or pork, pickled long beans, peanuts, scallions, and chili. You add the condiments yourself from pots on the table. It's eaten for breakfast, lunch, late-night snacks — any time. A proper bowl costs 8-15 RMB.</p>
+
+  <div class="my-6 rounded-2xl border border-accent/30 bg-accent/5 p-6">
+    <p class="text-sm font-semibold text-accent">Where to Get the Best Bowl</p>
+    <ul class="mt-2 space-y-3 text-sm text-stone-700">
+      <li><strong>Chongshan Rice Noodles (Chongshan Mifen)</strong> — Zhengyang Rd, Guilin city center. Open since the 1980s. Locals queue from 7 AM. Get the classic beef (8 RMB) or braised pork (12 RMB). Don't miss the pickled bamboo shoots.</li>
+      <li><strong>Shihua Rice Noodles</strong> — Qixing District. Smaller shop, fewer tourists, thicker broth. Their chili oil is house-made and legendary.</li>
+      <li><strong>Axiu Mifen</strong> — near Guilin Railway Station. 24-hour shop. Perfect for a late-night bowl after a delayed train. 10 RMB gets you a large.</li>
+    </ul>
+  </div>
+
+  <h2 id="beer-fish">Yangshuo Beer Fish (Pijiu Yu)</h2>
+  <p>Freshwater fish cooked in a clay pot with beer, tomatoes, green peppers, garlic, and soy sauce. The beer reduces into a savory-sweet sauce. It's the signature dish of Yangshuo. Expect to pay 60-100 RMB for a whole fish — enough for two people with rice.</p>
+
+  <div class="my-6 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold text-stone-500">Where to Eat Beer Fish (That Won't Rip You Off)</p>
+    <ul class="mt-2 space-y-3 text-sm text-stone-700">
+      <li><strong>Master Gan's Beer Fish</strong> — Diecui Rd, Yangshuo. The most famous. Touristy, yes, but the quality is consistent. ~80 RMB for a 2-3 person pot.</li>
+      <li><strong>Liu Sanjie Beer Fish</strong> — Guihua Rd. Locals' choice. Rougher setting, better value. ~60 RMB for the same size. Menu is Chinese-only.</li>
+      <li><strong>Dashifu (The Master)</strong> — near West Street. Mid-range option with English menu. Good for your first beer fish experience. ~90 RMB.</li>
+    </ul>
+    <p class="mt-3 text-xs text-stone-400">Watch out: some West Street restaurants charge by weight (per jin, 500g). Ask for total price before they catch the fish. A 1-1.5 kg fish is plenty for two.</p>
+  </div>
+
+  <h2 id="more-dishes">5 More Regional Dishes Worth Trying</h2>
+  <ul>
+    <li><strong>Stuffed Snails (Niang Tianluo):</strong> Large river snails stuffed with minced pork and snail meat, steamed or braised. Messy, fun, and uniquely Yangshuo. Try at Dashifu restaurant.</li>
+    <li><strong>Lipu Taro with Pork:</strong> Layers of braised pork belly and taro root, steamed until the pork collapses. Rich, decadent, a Guilin classic.</li>
+    <li><strong>Stir-Fried River Shrimp:</strong> Tiny freshwater shrimp from the Li River, flash-fried with garlic and chili. Eat them whole, shells and all. Best at riverside restaurants in Xingping.</li>
+    <li><strong>Bamboo Rice:</strong> Sticky rice, pork, and mushrooms stuffed into bamboo tubes and roasted over fire. Street food — find it at Moon Hill trailhead, the Yulong River bridge, and West Street night market. ~15 RMB.</li>
+    <li><strong>Oil Tea (Youcha):</strong> Savory tea fried with ginger and garlic, steeped in boiling water. Served with puffed rice. An acquired taste, but a 1,000-year-old local tradition. Try a bowl for 5 RMB at any morning market.</li>
+  </ul>
+
+  <h2 id="vegetarian" class="mt-12">Vegetarian & Vegan Survival Guide</h2>
+  <p>China is not easy for vegetarians, but Yangshuo is better than most places. The town has catered to Western backpackers for 40 years, so several restaurants understand vegetarian needs. Key phrases: <strong>Wo chi su</strong> (I eat vegetarian) and <strong>Bu yao rou</strong> (no meat).</p>
+  <div class="my-6 rounded-2xl border border-amber-200 bg-amber-50 p-6">
+    <p class="text-sm font-semibold text-amber-800">Vegetarian-Friendly Restaurants</p>
+    <ul class="mt-2 space-y-3 text-sm text-amber-900">
+      <li><strong>Pure Lotus</strong> — West Street (near the post office). 100% vegetarian. Dishes from 20-40 RMB. English menu. Try the mapo tofu and stir-fried seasonal greens.</li>
+      <li><strong>Luna Cafe</strong> — Guihua Rd. Western-run cafe with clearly labeled vegetarian options. Veggie burgers, salads, and smoothie bowls (40-60 RMB). Good for a reliable meal when you're tired of pointing at menus.</li>
+      <li><strong>Buddhist temple canteens:</strong> Jian Shan Temple (near Moon Hill) has a simple vegetarian lunch — rice, two vegetable dishes, tofu. 15 RMB. Open 11 AM-1 PM.</li>
+    </ul>
+  </div>
+  <p class="text-sm text-stone-500">Safe vegetarian dishes to look for: <strong>mapo tofu</strong> (ask for "mei you rou" - no meat), <strong>stir-fried greens</strong> (qing chao), <strong>eggplant in garlic sauce</strong> (yuxiang qiezi), <strong>steamed egg custard</strong> (zheng dan). Beware: "vegetable dishes" in China often include small amounts of pork for flavor. Be explicit.</p>
+
+  <h2 id="how-to-order" class="mt-12">How to Order Food Without Speaking Chinese</h2>
+  <div class="grid gap-6 sm:grid-cols-2 mt-6">
+    <div class="rounded-2xl border border-stone-200 bg-white p-6">
+      <p class="text-sm font-semibold text-stone-900 mb-3">Method 1: The Photo Menu</p>
+      <p class="text-sm leading-relaxed text-stone-600">Most restaurants in tourist areas have photo menus. Point and smile — it works. If they don't, open your translation app and show the camera view. Google Translate's camera mode can translate a Chinese menu in real time.</p>
+    </div>
+    <div class="rounded-2xl border border-stone-200 bg-white p-6">
+      <p class="text-sm font-semibold text-stone-900 mb-3">Method 2: The Survival Phrases</p>
+      <div class="space-y-2 text-sm text-stone-600">
+        <p><strong>Zhe ge</strong> = This one (point at a photo or neighboring table)</p>
+        <p><strong>Bu la</strong> = Not spicy</p>
+        <p><strong>Bu yao rou</strong> = No meat</p>
+        <p><strong>Mai dan</strong> = Check, please</p>
+        <p><strong>Hao chi!</strong> = Delicious! (they'll love you for this)</p>
+      </div>
+    </div>
+  </div>
+  <p class="mt-4 text-sm text-stone-500">Most importantly: download photos of dishes you want to try before your trip. Show the photo to the server — it works everywhere, even at street stalls with no menu at all.</p>
+
+  <h2 id="night-market" class="mt-12">Yangshuo Night Market</h2>
+  <p>West Street transforms after dark. The best food isn't in the sit-down restaurants — it's on the street. From about 7 PM onward, the side lanes fill with carts and stalls.</p>
+  <div class="my-6 rounded-2xl border border-stone-200 bg-white p-6">
+    <p class="text-sm font-semibold text-stone-900 mb-3">What to Grab at the Night Market</p>
+    <ul class="space-y-3 text-sm text-stone-600">
+      <li><strong>Grilled Li River fish skewers</strong> (10 RMB for 3) — tiny whole fish, salted and grilled over charcoal. Best stall: near the West Street archway, operated by a husband-wife team.</li>
+      <li><strong>Stinky tofu (chou doufu)</strong> (8 RMB) — deep-fried fermented tofu with chili sauce. Smells stronger than it tastes. Brave it once.</li>
+      <li><strong>Sweet rice cakes</strong> (5 RMB) — steamed glutinous rice with brown sugar. Look for the wooden steamers stacked high.</li>
+      <li><strong>Fresh sugarcane juice</strong> (10 RMB) — pressed to order. The cart near Yangshuo Park does it best: no ice, no water, just pure cane juice.</li>
+    </ul>
+  </div>
+
+  <h2 id="local-tips" class="mt-12">Dining Etiquette & Safety</h2>
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div class="rounded-2xl border border-stone-200 bg-white p-6">
+      <p class="text-sm font-semibold text-stone-900 mb-3">The Unwritten Rules</p>
+      <ul class="space-y-2 text-sm text-stone-600">
+        <li>Tipping does not exist in China. Don't do it — it confuses people.</li>
+        <li>Sharing dishes is the norm. Order 2-3 dishes for two people and share.</li>
+        <li>Rice comes last. In southern China, rice is often served at the end of the meal, not with the dishes.</li>
+        <li>Bones and shells go on the table, not in your bowl. The table surface is considered clean — more so than your personal bowl.</li>
+        <li>To call a server, raise your hand and say "fu wu yuan" (waiter). Shouting across the room is normal, not rude.</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl border border-stone-200 bg-white p-6">
+      <p class="text-sm font-semibold text-stone-900 mb-3">Safety Tips</p>
+      <ul class="space-y-2 text-sm text-stone-600">
+        <li>Don't drink tap water. Bottled water is 2-3 RMB everywhere.</li>
+        <li>Street food is generally safe — look for stalls with high turnover and local crowds. If there's a queue, it's clean enough.</li>
+        <li>Avoid raw vegetables unless you're at a Western-oriented cafe. Salads are uncommon and the washing standards aren't what you're used to.</li>
+        <li>Bring tissues. Most small restaurants don't provide napkins.</li>
+        <li>Peanuts are everywhere. If you have a peanut allergy, learn <strong>"Wo dui huasheng guomin"</strong> (I'm allergic to peanuts) and show it on your phone.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">The Golden Rule</p>
+    <p class="mt-2 text-stone-700">Skip the English-menu restaurants on West Street (30-50% markup). Walk two blocks into the side streets — Guihua Road, Diecui Road — and look for places with Chinese-only menus and lots of locals. Point at dishes or use a translation app. You'll eat better for half the price.</p>
+  </div>
+</DetailLayout>
+
+

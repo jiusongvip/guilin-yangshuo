@@ -1,0 +1,194 @@
+ {
+   "summary": {
+     "health_score": 75,
+     "business_type": "Travel Guide / Content Publisher",
+     "top_findings": [
+       "5 pages missing from sitemap.xml",
+       "13 pages under 500 words — thin content risk",
+       "All detail pages share same OG image",
+       "Main JS bundle is 182KB",
+       "Images lack width/height and srcset"
+     ],
+     "quick_wins": [
+       "Add 5 missing pages to sitemap.xml",
+       "Add width/height attributes to content images",
+       "Create page-specific OG images for top pages",
+       "Fix heading hierarchy on 16 pages",
+       "Add llms.txt file"
+     ]
+   },
+   "categories": [
+     {
+       "name": "Technical SEO",
+       "score": 78,
+       "what_works": [
+         "robots.txt open to all crawlers with sitemap directive",
+         "Proper canonical URLs on all pages",
+         "hreflang tags (en + x-default) on every page",
+         "Clean semantic URL structure"
+       ],
+       "findings": [
+         {
+           "title": "5 pages missing from sitemap.xml",
+           "severity": "Critical",
+           "description": "china-packing-list, china-prep-checklist, china-trip-builder, guilin-trip-cost-calculator, and yangshuo-cycling-routes exist in dist/ but are not listed in sitemap.xml",
+           "recommendation": "Update sitemap generation to include all built pages"
+         },
+         {
+           "title": "No trailing-slash redirect",
+           "severity": "Low",
+           "description": "Both /page and /page/ resolve without redirect, risking duplicate indexing",
+           "recommendation": "Add 301 redirect from non-slash to slash version"
+         }
+       ]
+     },
+     {
+       "name": "Content Quality",
+       "score": 72,
+       "what_works": [
+         "Unique meta descriptions on every page",
+         "Practical, authoritative writing style",
+         "Clear topical structure from destination guides to logistics"
+       ],
+       "findings": [
+         {
+           "title": "13 pages under 500 words",
+           "severity": "High",
+           "description": "Nine informational pages need expansion: li-river-cruise (334), best-time-to-visit-guilin (366), about (260), and more",
+           "recommendation": "Expand priority pages to 800+ words with practical details"
+         },
+         {
+           "title": "No author bylines or author pages",
+           "severity": "Medium",
+           "description": "Missing author credentials and editorial standards hurts E-E-A-T signals",
+           "recommendation": "Add author pages and bylines with travel credentials"
+         }
+       ]
+     },
+     {
+       "name": "On-Page SEO",
+       "score": 80,
+       "what_works": [
+         "Well-optimized title tags (50-70 characters)",
+         "Exactly one H1 per page",
+         "Strong internal linking via footer navigation"
+       ],
+       "findings": [
+         {
+           "title": "Flat heading hierarchy on 16 pages",
+           "severity": "Medium",
+           "description": "16 pages have h2s with no h3s, missing deeper content structure signals",
+           "recommendation": "Add h3 subheadings under major sections"
+         }
+       ]
+     },
+     {
+       "name": "Schema / Structured Data",
+       "score": 85,
+       "what_works": [
+         "WebSite schema on all pages",
+         "FAQPage schema on homepage with 8 questions",
+         "Article + BreadcrumbList on all detail pages"
+       ],
+       "findings": [
+         {
+           "title": "No ImageObject schema on detail pages",
+           "severity": "Medium",
+           "description": "Pages with hero images lack structured image data for rich results",
+           "recommendation": "Add ImageObject schema to DetailLayout"
+         }
+       ]
+     },
+     {
+       "name": "Performance",
+       "score": 68,
+       "what_works": [
+         "All WebP images with lazy loading",
+         "Font preloading with CDN preconnect",
+         "Minimal CSS (28KB)"
+       ],
+       "findings": [
+         {
+           "title": "Main JS bundle is 182KB",
+           "severity": "High",
+           "description": "Heavy for a content site, loads site-wide even when no interactive tools are used",
+           "recommendation": "Code-split tool components to load only on their pages"
+         },
+         {
+           "title": "No critical CSS inlining",
+           "severity": "Medium",
+           "description": "Full stylesheet blocks rendering",
+           "recommendation": "Inline critical CSS for above-fold content"
+         }
+       ]
+     },
+     {
+       "name": "AI Search Readiness",
+       "score": 68,
+       "what_works": [
+         "FAQPage schema helps AI overviews",
+         "BreadcrumbList schema for site structure",
+         "Clean semantic HTML for LLM scraping"
+       ],
+       "findings": [
+         {
+           "title": "No llms.txt file",
+           "severity": "Medium",
+           "description": "Missing standardized AI crawler discovery file",
+           "recommendation": "Create /llms.txt following llmstxt.org spec"
+         }
+       ]
+     },
+     {
+       "name": "Images",
+       "score": 72,
+       "what_works": [
+         "All WebP format",
+         "Alt text on every image",
+         "Eager on hero, lazy on content images"
+       ],
+       "findings": [
+         {
+           "title": "Card images lack width/height dimensions",
+           "severity": "High",
+           "description": "Missing dimensions cause Cumulative Layout Shift as images load",
+           "recommendation": "Add width and height attributes to all image tags"
+         },
+         {
+           "title": "No responsive image strategy",
+           "severity": "Medium",
+           "description": "No srcset/sizes attributes — all devices download 150-231KB images",
+           "recommendation": "Generate multiple sizes and use srcset for responsive delivery"
+         }
+       ]
+     }
+   ],
+   "action_plan": {
+     "phases": [
+       {
+         "name": "Phase 1: Critical Fixes",
+         "timeframe": "Week 1",
+         "items": ["Add 5 missing pages to sitemap", "Add width/height to content images"]
+       },
+       {
+         "name": "Phase 2: High-Impact Improvements",
+         "timeframe": "Weeks 2-3",
+         "items": ["Deepen thin content pages", "Fix heading hierarchy", "Create page-specific OG images", "Code-split JS bundles"]
+       },
+       {
+         "name": "Phase 3: Content & Authority",
+         "timeframe": "Month 2",
+         "items": ["Add author pages and bylines", "Add ImageObject schema", "Add llms.txt file", "Add responsive images with srcset"]
+       },
+       {
+         "name": "Phase 4: Monitoring & Iteration",
+         "timeframe": "Ongoing",
+         "items": ["Set up Google Search Console", "Track Core Web Vitals monthly", "Build backlinks", "Consider reader reviews and Review schema"]
+       }
+     ]
+   },
+   "artifacts": {
+     "findings_dir": "findings/",
+     "screenshots_dir": "screenshots/"
+   }
+ }

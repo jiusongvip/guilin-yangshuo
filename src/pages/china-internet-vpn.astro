@@ -1,0 +1,42 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+---
+<DetailLayout title="VPN for China Travel" subtitle="Which VPNs work in China right now, how to set them up, and what to do if your VPN stops working mid-trip." description="Which VPNs work in China in 2026. Setup guide, backup strategies, and alternatives for travelers who need to access Google, WhatsApp, and Instagram.">
+  <h2>The Reality of VPNs in China</h2>
+  <p>VPNs in China operate in a constant cat-and-mouse game with the Great Firewall. A VPN that works perfectly today might be blocked tomorrow. The single most important rule: <strong>set up at least two VPN options before you leave home</strong>. You cannot download a new VPN app once you're inside China without a working VPN — and app stores inside China don't offer VPN apps.</p>
+
+  <h2>What Currently Works (Early 2026)</h2>
+  <p>This information changes frequently. Check recent traveler reports on Reddit (r/chinalife, r/travelchina) before your trip for the latest status.</p>
+  <ul>
+    <li><strong>LetsVPN:</strong> Consistently the most reliable option, specifically designed for China. Works on iOS, Android, Windows, and Mac. Simple one-tap connection with no configuration needed. Paid plans from $5/month. Many China-based expats use this as their daily driver.</li>
+    <li><strong>Astrill:</strong> Long-time China favorite with a dedicated "China-optimized" protocol called StealthVPN. More expensive ($15-30/month) but with a longer track record and more server options. Router-level installation available — useful if you want all your devices protected.</li>
+    <li><strong>Mullvad:</strong> Privacy-focused Swedish VPN. Works intermittently in China — less reliable than LetsVPN or Astrill, but good as a backup. $5/month, no account required, accepts cryptocurrency.</li>
+    <li><strong>Proton VPN:</strong> Free tier available but very unreliable in China. Paid tier with Stealth protocol sometimes works. Better as a third backup than a primary option.</li>
+  </ul>
+
+  <h2>Pre-Trip Setup Checklist</h2>
+  <ol>
+    <li><strong>Subscribe and pay</strong> for at least two VPN services before leaving home.</li>
+    <li><strong>Download the apps</strong> on ALL your devices — phone, tablet, laptop.</li>
+    <li><strong>Test each VPN</strong> — connect, browse, make sure it works.</li>
+    <li><strong>Save your login credentials</strong> somewhere offline (write them down or save in a notes app that works offline).</li>
+    <li><strong>Configure the protocol:</strong> Most VPNs have a default protocol. In China-specific ones, switch to the recommended China protocol (LetsVPN's default works; Astrill's StealthVPN is their China protocol).</li>
+    <li><strong>Consider an eSIM as backup:</strong> Data eSIMs that route through Hong Kong bypass the firewall entirely — no VPN needed. This is increasingly the easiest option for travelers (see our <a href="/china-internet-guide" class="text-accent underline">Internet & eSIM guide</a>).</li>
+  </ol>
+
+  <div class="mt-8 rounded-2xl border border-stone-200 bg-amber-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-amber-700">A Note on Legality</p>
+    <p class="mt-2 text-sm text-stone-700">VPN use in China exists in a legal gray area. Using a VPN for personal internet access is generally tolerated for tourists, but operating a VPN service or using one for commercial purposes can carry legal consequences. Don't broadcast your VPN use publicly and use common sense.</p>
+  </div>
+
+  <div class="mt-12 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Continue Reading</p>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li><a href="/china-internet-guide" class="text-accent hover:underline">China Internet Guide</a></li>
+      <li><a href="/alipay-wechat-setup" class="text-accent hover:underline">Alipay & WeChat Setup</a></li>
+      <li><a href="/china-visa" class="text-accent hover:underline">China Visa Guide</a></li>
+      <li><a href="/guilin-in-your-china-trip" class="text-accent hover:underline">Guilin in Your China Trip</a></li>
+    </ul>
+  </div>
+
+</DetailLayout>

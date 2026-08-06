@@ -1,0 +1,24 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+import PackingList from "../components/tools/PackingList";
+---
+
+<DetailLayout
+  title="China Packing List Generator"
+  subtitle="Select your season and activities to get a customized packing checklist."
+  description="Free China packing list generator. Choose your season and planned activities to get a personalized, printable packing checklist for your trip."
+>
+  <p class="mb-8 text-stone-600">Tell us when you're coming and what you plan to do — we'll generate a packing checklist with all the essentials plus activity-specific items. Check items off as you pack.</p>
+  <PackingList client:load />
+
+  <div class="mt-12 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Continue Reading</p>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li><a href="/best-time-to-visit-guilin" class="text-accent hover:underline">Best Time to Visit</a></li>
+      <li><a href="/guilin-food" class="text-accent hover:underline">Guilin Food Guide</a></li>
+      <li><a href="/yangshuo-cycling-routes" class="text-accent hover:underline">Yangshuo Cycling Routes</a></li>
+      <li><a href="/survival-chinese-phrases" class="text-accent hover:underline">Survival Chinese Phrases</a></li>
+    </ul>
+  </div>
+
+</DetailLayout>

@@ -1,0 +1,11 @@
+---
+const { items, jumpLinks = false } = Astro.props;
+---
+<dl class="space-y-6">
+  {items.map((item) => (
+    <div id={jumpLinks ? `faq-${items.indexOf(item)}` : undefined}>
+      <dt class="text-lg font-semibold text-stone-900">{item.q}</dt>
+      <dd class="mt-2 max-w-prose text-stone-600 leading-relaxed">{item.a}</dd>
+    </div>
+  ))}
+</dl>

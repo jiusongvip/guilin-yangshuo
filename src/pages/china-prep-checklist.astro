@@ -1,0 +1,24 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+import PrepChecklist from "../components/tools/PrepChecklist";
+---
+<DetailLayout title="China Trip Prep Checklist" subtitle="What to do 4 weeks, 1 week, 1 day, and on arrival — so nothing falls through the cracks."
+  description="Interactive China trip preparation checklist: timeline from 30 days before to arrival day. Covers visa, VPN, Alipay, packing, train tickets, and all the logistics foreigners stress about.">
+
+  <p>Visiting China takes more prep than most destinations. But it's not complicated — you just need to do the right things in the right order. Here's your interactive timeline, from 30 days out to the moment you land.</p>
+
+  <div class="mt-8">
+    <PrepChecklist client:load />
+  </div>
+
+  <div class="mt-12 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Continue Reading</p>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li><a href="/china-visa" class="text-accent hover:underline">China Visa Guide</a></li>
+      <li><a href="/alipay-wechat-setup" class="text-accent hover:underline">Alipay & WeChat Setup</a></li>
+      <li><a href="/china-internet-guide" class="text-accent hover:underline">China Internet Guide</a></li>
+      <li><a href="/how-to-book-china-trains" class="text-accent hover:underline">How to Book China Trains</a></li>
+    </ul>
+  </div>
+
+</DetailLayout>

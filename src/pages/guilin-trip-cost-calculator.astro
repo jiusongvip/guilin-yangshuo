@@ -1,0 +1,24 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+import CostCalculator from "../components/tools/CostCalculator";
+---
+
+<DetailLayout
+  title="Guilin Trip Cost Calculator"
+  subtitle="Select your travel style, days, and activities to estimate your total trip cost."
+  description="Free Guilin Yangshuo trip cost calculator. Estimate your total trip budget based on travel style, number of days, and activities. Real 2026 prices."
+>
+  <p class="mb-8 text-stone-600">Get a personalized cost estimate in seconds. This calculator uses real 2026 prices for hotels, food, transport, and activities. Move the sliders to match your travel style.</p>
+  <CostCalculator client:load />
+
+  <div class="mt-12 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Continue Reading</p>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li><a href="/guilin-yangshuo-trip-cost" class="text-accent hover:underline">Trip Cost Breakdown</a></li>
+      <li><a href="/guilin-yangshuo-itinerary-3-day" class="text-accent hover:underline">3-Day Itinerary</a></li>
+      <li><a href="/li-river-cruise" class="text-accent hover:underline">Li River Cruise</a></li>
+      <li><a href="/where-to-stay-in-guilin" class="text-accent hover:underline">Where to Stay in Guilin</a></li>
+    </ul>
+  </div>
+
+</DetailLayout>

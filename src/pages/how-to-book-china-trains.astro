@@ -1,0 +1,93 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+---
+<DetailLayout title="How to Book China Trains" subtitle="The 12306 system, Trip.com alternative, ticket classes, seat selection, and a step-by-step guide to navigating Chinese train stations."
+  description="Complete guide to booking China train tickets as a foreigner: Trip.com vs 12306 step-by-step, ticket classes explained, seat selection, and what to expect at the station.">
+  <h2>The Two Ways to Book</h2>
+  <h3>Option 1: Trip.com (Easiest for Foreigners)</h3>
+  <p>Trip.com (formerly Ctrip) has an English interface and accepts foreign credit cards. You can book high-speed and regular trains through their app or website. They charge a small booking fee (usually 20-30 RMB per ticket) but the English interface and foreign card support make it worth it for most travelers.</p>
+  <h4>Step-by-Step on Trip.com</h4>
+  <ol>
+    <li>Open the Trip.com app or website and select "Trains"</li>
+    <li>Enter your departure and arrival cities — use English names (e.g., "Guangzhou" not "Guangzhou South" at first, you'll pick the specific station later)</li>
+    <li>Select your date. Trains open for booking 15 days ahead</li>
+    <li>Browse the results — each listing shows duration, departure/arrival time, and ticket class prices</li>
+    <li>Pick your class: Second Class for budget, First Class for comfort on longer trips</li>
+    <li>Enter passenger details <strong>exactly</strong> as they appear on your passport. One typo and you won't board</li>
+    <li>Pay with your foreign card. Trip.com charges in your home currency</li>
+    <li>You'll receive a confirmation email with a pick-up code. At the station, go to the ticket counter with your passport and the code to collect your physical ticket</li>
+  </ol>
+
+  <h3>Option 2: 12306 (Official, Cheaper, Harder)</h3>
+  <p>The official China Railway app and website (12306.cn) has an English version. It's cheaper (no booking fee) and tickets are available slightly earlier than on third-party sites. However, the interface can be frustrating, and foreign card acceptance is inconsistent. If you read some Chinese or are patient, it's the best option for frequent travelers.</p>
+  <h4>12306 Registration Tips</h4>
+  <ol>
+    <li>Download the "Railway 12306" app (English version available)</li>
+    <li>Register with your passport number — the name fields must match your passport character-for-character</li>
+    <li>If foreign card payment fails (common), try a different card or fall back to Trip.com</li>
+    <li>Once registered, you can buy up to 4 tickets per order</li>
+  </ol>
+
+  <h2>Ticket Classes</h2>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-sm border border-stone-200 rounded-xl overflow-hidden mt-4">
+      <thead class="bg-stone-50 text-xs font-semibold uppercase tracking-wider text-stone-400">
+        <tr><th class="px-4 py-3">Class</th><th class="px-4 py-3">Seats</th><th class="px-4 py-3">Legroom</th><th class="px-4 py-3">Power</th><th class="px-4 py-3">Price (Guangzhou-Guilin)</th><th class="px-4 py-3">Best For</th></tr>
+      </thead>
+      <tbody class="divide-y divide-stone-100">
+        <tr><td class="px-4 py-3 font-medium">Second Class</td><td class="px-4 py-3">3-2 config</td><td class="px-4 py-3">Adequate</td><td class="px-4 py-3">Shared outlets</td><td class="px-4 py-3">~170 RMB</td><td class="px-4 py-3">Most travelers</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 font-medium">First Class</td><td class="px-4 py-3">2-2 config</td><td class="px-4 py-3">Spacious</td><td class="px-4 py-3">Individual outlets</td><td class="px-4 py-3">~270 RMB</td><td class="px-4 py-3">Trips over 4 hours</td></tr>
+        <tr><td class="px-4 py-3 font-medium">Business Class</td><td class="px-4 py-3">3 across</td><td class="px-4 py-3">Lie-flat</td><td class="px-4 py-3">Individual + USB</td><td class="px-4 py-3">~500 RMB</td><td class="px-4 py-3">Overnight, splurge</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>At the Station: A Walkthrough</h2>
+  <h3>Before You Go</h3>
+  <p>Arrive 45-60 minutes before departure for high-speed trains (G/D trains), 30 minutes for regular trains. Chinese stations are large — the walk from the entrance to your platform can take 10+ minutes. Have your passport ready at all times — you'll show it at security, ticket collection, and boarding.</p>
+  <h3>Security Check</h3>
+  <p>All passengers go through security — bags through X-ray, walk through a metal detector. Similar to airport security but faster. <strong>Note:</strong> aerosol cans (deodorant, sunscreen) are often confiscated — pack these in checked luggage or buy them at your destination. Power banks must be under 20,000 mAh and clearly labeled with capacity.</p>
+  <h3>Finding Your Gate</h3>
+  <p>Look for the giant departure board — it cycles between Chinese and English. Find your train number (e.g., G2902). The board shows: train number → destination → departure time → gate number → status. Screenshot the board or write down your gate number. Gates open about 15 minutes before departure and close 3-5 minutes before.</p>
+  <h3>Boarding</h3>
+  <p>Line up at your gate. Scan your ticket (or passport at newer stations) at the turnstile. Follow the crowd down to the platform. Check the platform signs — they indicate which car number stops where. High-speed trains are long (16 cars), and walking between cars is possible but awkward with luggage. Board through the door closest to your assigned car.</p>
+  <h3>On the Train</h3>
+  <p>Find your seat. Luggage goes on the overhead rack (smaller bags) or in the luggage area at the end of each car. There's usually a hot water dispenser near the carriage entrance — bring instant noodles or tea bags. The dining car serves hot meals (30-50 RMB) and snacks, but instant noodles are the traditional train food in China. Bathrooms are at the end of each car — bring your own tissue paper.</p>
+
+  <h2>Seat Selection Tips</h2>
+  <ul>
+    <li><strong>Window seats (A/F):</strong> Best for views and sleeping. The A seat is always by the window. On G-trains, the scenery between Guangzhou and Guilin includes mountains and rivers — worth the window seat.</li>
+    <li><strong>Aisle seats (C/D):</strong> More legroom to stretch, easier bathroom access on long trips.</li>
+    <li><strong>Forward-facing:</strong> Chinese high-speed seats can be rotated. If your seat faces backward and it bothers you, ask a conductor to rotate it — they'll do it at the next stop.</li>
+  </ul>
+
+  <div class="mt-8 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Key Routes to Guilin</p>
+    <ul class="mt-2 space-y-1 text-sm text-stone-700">
+      <li><strong>Guangzhou South → Guilin North/West:</strong> 2.5 hours, ~170 RMB (2nd class). Most frequent — trains every 30-60 minutes</li>
+      <li><strong>Shenzhen North → Guilin North:</strong> 3 hours, ~220 RMB</li>
+      <li><strong>Hong Kong West Kowloon → Guilin West:</strong> 3.5 hours, ~350 HKD. Direct train — no need to cross into Shenzhen first</li>
+      <li><strong>Beijing West → Guilin:</strong> 8-10 hours, ~800 RMB (2nd), ~450 RMB (flight — often cheaper)</li>
+    </ul>
+  </div>
+
+  <div class="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-amber-800">Common Mistakes</p>
+    <ul class="mt-3 space-y-2 text-sm text-amber-900">
+      <li><strong>Wrong station:</strong> Guilin has three stations — Guilin North, Guilin West, and Guilin (South). Check which one your ticket says. They're 20-30 minutes apart by taxi.</li>
+      <li><strong>Booking too late:</strong> Trains sell out during holidays (Spring Festival, Golden Week, summer vacation). Book as soon as tickets open (15 days ahead).</li>
+      <li><strong>Collecting tickets at the wrong window:</strong> Foreign passport holders often need to go to a staffed counter (not the self-service machines) to collect tickets. Look for the "Manual Service" or "Ticket Collection" counter.</li>
+    </ul>
+  </div>
+
+  <div class="mt-12 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Continue Reading</p>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li><a href="/china-visa" class="text-accent hover:underline">China Visa Guide</a></li>
+      <li><a href="/guilin-to-yangshuo" class="text-accent hover:underline">Guilin to Yangshuo Transport</a></li>
+      <li><a href="/china-trip-builder" class="text-accent hover:underline">China Trip Builder</a></li>
+      <li><a href="/guilin-in-your-china-trip" class="text-accent hover:underline">Guilin in Your China Trip</a></li>
+    </ul>
+  </div>
+
+</DetailLayout>

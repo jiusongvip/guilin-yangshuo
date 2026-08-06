@@ -1,0 +1,12 @@
+---
+const { href, image, title, description, accent } = Astro.props;
+---
+<a href={href} class="group block overflow-hidden rounded-2xl bg-white border border-stone-200 transition-shadow hover:shadow-lg hover:border-stone-300">
+  <div class="aspect-[16/10] overflow-hidden bg-stone-100">
+    <img src={image} alt={title} width="800" height="500" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+  </div>
+  <div class="p-5">
+    <h3 class="text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">{title}</h3>
+    {description && <p class="mt-1.5 text-sm leading-relaxed text-stone-500">{description}</p>}
+  </div>
+</a>

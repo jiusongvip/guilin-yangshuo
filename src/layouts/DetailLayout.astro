@@ -1,0 +1,111 @@
+---
+import Layout from "./Layout.astro";
+import { SITE } from "../consts";
+
+export interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+  description?: string;
+}
+
+const { title, subtitle, image, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+
+function toCrumbName(slug: string): string {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+const path = Astro.url.pathname;
+const segments = path.replace(/^\/+|\/+$/g, "").split("/");
+const crumbs = [
+  { label: "Home", href: "/" },
+  ...segments.map((seg, i) => ({
+    label: toCrumbName(seg),
+    href: "/" + segments.slice(0, i + 1).join("/"),
+  })),
+];
+crumbs[crumbs.length - 1].label = title;
+
+const breadcrumbLD = JSON.stringify({
+  "@type": "BreadcrumbList",
+  "itemListElement": crumbs.map((crumb, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": crumb.label,
+    "item": SITE.url + crumb.href,
+  })),
+});
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description ?? subtitle ?? "",
+  "url": canonical,
+  "breadcrumb": JSON.parse(breadcrumbLD),
+  "about": { "@type": "Place", "name": "Guilin & Yangshuo" },
+  "publisher": { "@type": "Organization", "name": "Guilin Yangshuo Travel Guide", "url": SITE.url },
+});
+
+const jsonLdStr = jsonLd;
+---
+
+<Layout title={title} description={description} ogImage={image ? new URL(image, SITE.url).href : undefined} image={image}>
+  <script type="application/ld+json" set:html={jsonLdStr}></script>
+
+  <article class="py-8 md:py-14">
+    <div class="mx-auto max-w-3xl px-5 sm:px-6">
+      <!-- Breadcrumbs -->
+      <nav class="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-stone-400" aria-label="Breadcrumb">
+        {crumbs.map((crumb, i) => (
+          <>
+            {i > 0 && (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M9 18l6-6-6-6"/></svg>
+            )}
+            {i < crumbs.length - 1 ? (
+              <a href={crumb.href} class="transition-colors hover:text-stone-600">{crumb.label}</a>
+            ) : (
+              <span class="text-stone-700 font-medium">{crumb.label}</span>
+            )}
+          </>
+        ))}
+      </nav>
+
+      <!-- Header -->
+      <header class="mb-10 md:mb-14">
+        <div class="mb-4 h-1 w-12 rounded-full bg-accent/70"></div>
+        <h1 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl md:text-4xl lg:text-[2.75rem] lg:leading-tight">{title}</h1>
+        {subtitle && (
+          <p class="mt-4 text-base leading-relaxed text-stone-500 sm:text-lg md:text-xl md:leading-relaxed">{subtitle}</p>
+        )}
+      </header>
+
+      <!-- Optional hero image -->
+      {image && (
+        <div class="mb-10 aspect-[21/9] overflow-hidden rounded-2xl bg-stone-100 shadow-sm md:mb-14">
+          <img src={image} alt={title} class="h-full w-full object-cover" />
+        </div>
+      )}
+
+      <!-- Content -->
+      <div class="prose prose-stone prose-lg max-w-none">
+        <slot />
+      </div>
+
+      <!-- Footer nav -->
+      <footer class="mt-16 border-t border-stone-200 pt-8 md:mt-20">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <a href="/" class="group inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-hover:-translate-x-0.5"><path d="M15 18l-6-6 6-6"/></svg>
+            Back to homepage
+          </a>
+          <p class="text-xs text-stone-400">Last updated: August 2026</p>
+        </div>
+      </footer>
+    </div>
+  </article>
+</Layout>

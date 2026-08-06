@@ -1,0 +1,106 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+---
+<DetailLayout title="Survival Chinese for Travelers" subtitle="25 essential phrases with audio — click to hear native pronunciation. No grammar, just what you actually need in Guilin and Yangshuo."
+  description="25 essential Chinese phrases with audio pronunciation for travelers. Click to hear each phrase spoken. Order food, ask prices, find toilets, bargain at markets.">
+
+  <p>Click the <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent/10 text-accent mx-0.5 align-middle text-[10px] font-bold">▶</span> button next to any phrase to hear it spoken in natural Mandarin. Best with headphones or earbuds.</p>
+
+  <h2>Essential Phrases</h2>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-sm border border-stone-200 rounded-xl overflow-hidden">
+      <thead class="bg-stone-50 text-xs font-semibold uppercase tracking-wider text-stone-400">
+        <tr><th class="px-4 py-3 w-10"></th><th class="px-4 py-3">English</th><th class="px-4 py-3">Chinese</th><th class="px-4 py-3">Pronunciation</th><th class="px-4 py-3">When to Use</th></tr>
+      </thead>
+      <tbody class="divide-y divide-stone-100">
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="你好">▶</button></td><td class="px-4 py-3 font-medium">Hello</td><td class="px-4 py-3 text-stone-800">你好</td><td class="px-4 py-3 text-stone-500 text-xs">Ni hao (nee how)</td><td class="px-4 py-3 text-stone-600">General greeting</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="谢谢">▶</button></td><td class="px-4 py-3 font-medium">Thank you</td><td class="px-4 py-3 text-stone-800">谢谢</td><td class="px-4 py-3 text-stone-500 text-xs">Xie xie (shyeh shyeh)</td><td class="px-4 py-3 text-stone-600">Always</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="不要">▶</button></td><td class="px-4 py-3 font-medium">I don't want it</td><td class="px-4 py-3 text-stone-800">不要</td><td class="px-4 py-3 text-stone-500 text-xs">Bu yao (boo yow)</td><td class="px-4 py-3 text-stone-600">Declining vendors. Most useful phrase!</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="多少钱？">▶</button></td><td class="px-4 py-3 font-medium">How much?</td><td class="px-4 py-3 text-stone-800">多少钱？</td><td class="px-4 py-3 text-stone-500 text-xs">Duo shao qian? (dwo shao chyen)</td><td class="px-4 py-3 text-stone-600">Asking price at markets</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="太贵了">▶</button></td><td class="px-4 py-3 font-medium">Too expensive!</td><td class="px-4 py-3 text-stone-800">太贵了</td><td class="px-4 py-3 text-stone-500 text-xs">Tai gui le (tie gway luh)</td><td class="px-4 py-3 text-stone-600">Negotiating. Say this, then walk away.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="厕所在哪儿？">▶</button></td><td class="px-4 py-3 font-medium">Where is the toilet?</td><td class="px-4 py-3 text-stone-800">厕所在哪儿？</td><td class="px-4 py-3 text-stone-500 text-xs">Ce suo zai nar? (tsuh swo dzai nar)</td><td class="px-4 py-3 text-stone-600">Self-explanatory. Memorize this one.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="我要这个">▶</button></td><td class="px-4 py-3 font-medium">I want this one</td><td class="px-4 py-3 text-stone-800">我要这个</td><td class="px-4 py-3 text-stone-500 text-xs">Wo yao zhe ge (wo yow juh guh)</td><td class="px-4 py-3 text-stone-600">Point at a photo menu, say this.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="买单">▶</button></td><td class="px-4 py-3 font-medium">Check, please</td><td class="px-4 py-3 text-stone-800">买单</td><td class="px-4 py-3 text-stone-500 text-xs">Mai dan (my dan)</td><td class="px-4 py-3 text-stone-600">At restaurants. No tipping expected.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="我听不懂">▶</button></td><td class="px-4 py-3 font-medium">I don't understand</td><td class="px-4 py-3 text-stone-800">我听不懂</td><td class="px-4 py-3 text-stone-500 text-xs">Wo ting bu dong (wo ting boo dong)</td><td class="px-4 py-3 text-stone-600">When lost. They will switch to gestures.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="好吃">▶</button></td><td class="px-4 py-3 font-medium">Delicious!</td><td class="px-4 py-3 text-stone-800">好吃</td><td class="px-4 py-3 text-stone-500 text-xs">Hao chi (how chir)</td><td class="px-4 py-3 text-stone-600">Say this to the cook. They will beam.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="不要辣">▶</button></td><td class="px-4 py-3 font-medium">Not spicy</td><td class="px-4 py-3 text-stone-800">不要辣</td><td class="px-4 py-3 text-stone-500 text-xs">Bu yao la (boo yow lah)</td><td class="px-4 py-3 text-stone-600">Ordering food. Critical in Guilin.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="我吃素">▶</button></td><td class="px-4 py-3 font-medium">I eat vegetarian</td><td class="px-4 py-3 text-stone-800">我吃素</td><td class="px-4 py-3 text-stone-500 text-xs">Wo chi su (wo chir soo)</td><td class="px-4 py-3 text-stone-600">Dietary restriction. Some places understand.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="能便宜吗？">▶</button></td><td class="px-4 py-3 font-medium">Can you go cheaper?</td><td class="px-4 py-3 text-stone-800">能便宜吗？</td><td class="px-4 py-3 text-stone-500 text-xs">Neng pianyi ma? (nung pyen-yee ma)</td><td class="px-4 py-3 text-stone-600">Bargaining at markets. Use with a smile.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="有没有Wi-Fi？">▶</button></td><td class="px-4 py-3 font-medium">Do you have Wi-Fi?</td><td class="px-4 py-3 text-stone-800">有没有Wi-Fi？</td><td class="px-4 py-3 text-stone-500 text-xs">You meiyou Wi-Fi? (yo may-yo Wi-Fi)</td><td class="px-4 py-3 text-stone-600">At cafes and hotels. They will show you the password.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="一瓶水">▶</button></td><td class="px-4 py-3 font-medium">One bottle of water</td><td class="px-4 py-3 text-stone-800">一瓶水</td><td class="px-4 py-3 text-stone-500 text-xs">Yi ping shui (ee ping shway)</td><td class="px-4 py-3 text-stone-600">At any convenience store. ~2-3 RMB.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="支付宝可以吗？">▶</button></td><td class="px-4 py-3 font-medium">Can I use Alipay?</td><td class="px-4 py-3 text-stone-800">支付宝可以吗？</td><td class="px-4 py-3 text-stone-500 text-xs">Zhifubao keyi ma? (jrr-foo-bow kuh-ee ma)</td><td class="px-4 py-3 text-stone-600">Before you pull out cash. Most say yes.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="我是外国人">▶</button></td><td class="px-4 py-3 font-medium">I am a foreigner</td><td class="px-4 py-3 text-stone-800">我是外国人</td><td class="px-4 py-3 text-stone-500 text-xs">Wo shi waiguoren (wo shr why-gwo-ren)</td><td class="px-4 py-3 text-stone-600">Explains a lot. People become more patient.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="洗手间在哪儿？">▶</button></td><td class="px-4 py-3 font-medium">Where is the restroom?</td><td class="px-4 py-3 text-stone-800">洗手间在哪儿？</td><td class="px-4 py-3 text-stone-500 text-xs">Xishoujian zai nar? (she-show-jyen dzai nar)</td><td class="px-4 py-3 text-stone-600">The polite version. Hotels and restaurants.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="阳朔怎么去？">▶</button></td><td class="px-4 py-3 font-medium">How to get to Yangshuo?</td><td class="px-4 py-3 text-stone-800">阳朔怎么去？</td><td class="px-4 py-3 text-stone-500 text-xs">Yangshuo zenme qu? (yang-shwo dzuh-muh chyoo)</td><td class="px-4 py-3 text-stone-600">Asking for directions from Guilin.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="慢一点">▶</button></td><td class="px-4 py-3 font-medium">Slow down please</td><td class="px-4 py-3 text-stone-800">慢一点</td><td class="px-4 py-3 text-stone-500 text-xs">Man yi dian (man ee dyen)</td><td class="px-4 py-3 text-stone-600">When someone speaks Chinese too fast.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="救命！">▶</button></td><td class="px-4 py-3 font-medium">Help! (emergency)</td><td class="px-4 py-3 text-stone-800">救命！</td><td class="px-4 py-3 text-stone-500 text-xs">Jiu ming! (jyo ming)</td><td class="px-4 py-3 text-stone-600">Only in real emergencies. Police: 110.</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="有英文菜单吗？">▶</button></td><td class="px-4 py-3 font-medium">English menu?</td><td class="px-4 py-3 text-stone-800">有英文菜单吗？</td><td class="px-4 py-3 text-stone-500 text-xs">You yingwen caidan ma? (yo ying-wen tsai-dan ma)</td><td class="px-4 py-3 text-stone-600">At restaurants. If they have one, they will bring it.</td></tr>
+        <tr><td class="px-4 py-3 text-center"><button class="speak-btn w-7 h-7 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors flex items-center justify-center text-[10px] font-bold" data-speak="我对花生过敏">▶</button></td><td class="px-4 py-3 font-medium">I am allergic to peanuts</td><td class="px-4 py-3 text-stone-800">我对花生过敏</td><td class="px-4 py-3 text-stone-500 text-xs">Wo dui huasheng guomin (wo dway hwa-shung gwo-min)</td><td class="px-4 py-3 text-stone-600">Critical. Show this on your phone screen.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="mt-10">Numbers (Essential)</h2>
+  <p><strong>1-10:</strong> Yi, Er, San, Si, Wu, Liu, Qi, Ba, Jiu, Shi — <span class="text-stone-500">(ee, ar, san, suh, woo, lyo, chee, bah, jyo, shr).</span></p>
+  <p>For prices, vendors will either show you on a calculator or write the number. Learn to recognize the hand gestures for 1-10 — they are different from Western gestures and widely used in markets.</p>
+
+  <h2 class="mt-10">Apps That Help</h2>
+  <ul>
+    <li><strong>Google Translate</strong> (with Chinese downloaded offline): Camera translation for menus and signs works surprisingly well.</li>
+    <li><strong>Pleco:</strong> The best Chinese-English dictionary app. Works offline. Draw characters with your finger to look them up.</li>
+    <li><strong>Baidu Translate:</strong> Often better than Google for Chinese. Works without a VPN.</li>
+  </ul>
+
+  <hr class="my-10 border-stone-200" />
+
+  <script>
+    function getChineseVoice() {
+      const voices = speechSynthesis.getVoices();
+      const preferred = voices.find(v => v.lang === 'zh-CN' && v.localService);
+      if (preferred) return preferred;
+      const fallback = voices.find(v => v.lang.startsWith('zh'));
+      return fallback || voices[0];
+    }
+
+    window.speechSynthesis && speechSynthesis.getVoices();
+
+    document.querySelectorAll('.speak-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-speak');
+        if (!text || !window.speechSynthesis) return;
+
+        speechSynthesis.cancel();
+
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'zh-CN';
+        u.rate = 0.82;
+
+        const voice = getChineseVoice();
+        if (voice) u.voice = voice;
+
+        btn.style.transform = 'scale(1.25)';
+        btn.style.backgroundColor = '#1a6b4a';
+        btn.style.color = 'white';
+
+        u.onend = u.onerror = () => {
+          btn.style.transform = 'scale(1)';
+          btn.style.backgroundColor = '';
+          btn.style.color = '';
+        };
+
+        speechSynthesis.speak(u);
+      });
+    });
+  </script>
+
+  <div class="mt-12 rounded-2xl border border-stone-200 bg-stone-50 p-6">
+    <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Continue Reading</p>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li><a href="/china-internet-guide" class="text-accent hover:underline">China Internet Guide</a></li>
+      <li><a href="/guilin-food" class="text-accent hover:underline">Guilin Food Guide</a></li>
+      <li><a href="/alipay-wechat-setup" class="text-accent hover:underline">Alipay & WeChat Setup</a></li>
+      <li><a href="/how-to-book-china-trains" class="text-accent hover:underline">How to Book China Trains</a></li>
+    </ul>
+  </div>
+
+</DetailLayout>
