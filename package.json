@@ -4,15 +4,16 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npx astro build",
     "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.1.0",
+    "astro": "^5.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "astro": "^5.5.0",
-    "@tailwindcss/vite": "^4.1.0",
     "tailwindcss": "^4.1.0"
   },
   "devDependencies": {
