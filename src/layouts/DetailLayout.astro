@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "./Layout.astro";
 import { SITE } from "../consts";
 
@@ -13,10 +13,7 @@ const { title, subtitle, image, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 
 function toCrumbName(slug: string): string {
-  return slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+  return slug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 }
 
 const path = Astro.url.pathname;
@@ -33,10 +30,7 @@ crumbs[crumbs.length - 1].label = title;
 const breadcrumbLD = JSON.stringify({
   "@type": "BreadcrumbList",
   "itemListElement": crumbs.map((crumb, i) => ({
-    "@type": "ListItem",
-    "position": i + 1,
-    "name": crumb.label,
-    "item": SITE.url + crumb.href,
+    "@type": "ListItem", "position": i + 1, "name": crumb.label, "item": SITE.url + crumb.href,
   })),
 });
 
@@ -50,60 +44,52 @@ const jsonLd = JSON.stringify({
   "about": { "@type": "Place", "name": "Guilin & Yangshuo" },
   "publisher": { "@type": "Organization", "name": "Guilin Yangshuo Travel Guide", "url": SITE.url },
 });
-
-const jsonLdStr = jsonLd;
 ---
 
 <Layout title={title} description={description} ogImage={image ? new URL(image, SITE.url).href : undefined} image={image}>
-  <script type="application/ld+json" set:html={jsonLdStr}></script>
+  <script type="application/ld+json" set:html={jsonLd}></script>
 
-  <article class="py-8 md:py-14">
+  <article class="pt-28 pb-8 md:pt-36 md:pb-14">
     <div class="mx-auto max-w-3xl px-5 sm:px-6">
-      <!-- Breadcrumbs -->
-      <nav class="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-stone-400" aria-label="Breadcrumb">
+      <nav class="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-[#5c5a4c]/60" aria-label="Breadcrumb">
         {crumbs.map((crumb, i) => (
           <>
-            {i > 0 && (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M9 18l6-6-6-6"/></svg>
-            )}
+            {i > 0 && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 opacity-40"><path d="M9 18l6-6-6-6"/></svg>}
             {i < crumbs.length - 1 ? (
-              <a href={crumb.href} class="transition-colors hover:text-stone-600">{crumb.label}</a>
+              <a href={crumb.href} class="transition-colors hover:text-[#0f766e]">{crumb.label}</a>
             ) : (
-              <span class="text-stone-700 font-medium">{crumb.label}</span>
+              <span class="text-[#0f766e] font-medium">{crumb.label}</span>
             )}
           </>
         ))}
       </nav>
 
-      <!-- Header -->
-      <header class="mb-10 md:mb-14">
-        <div class="mb-4 h-1 w-12 rounded-full bg-accent/70"></div>
-        <h1 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl md:text-4xl lg:text-[2.75rem] lg:leading-tight">{title}</h1>
-        {subtitle && (
-          <p class="mt-4 text-base leading-relaxed text-stone-500 sm:text-lg md:text-xl md:leading-relaxed">{subtitle}</p>
-        )}
+      <header class="mb-12 md:mb-16">
+        <div class="hero-accent-line mb-6"></div>
+        <h1 class="text-3xl font-bold tracking-tight text-[#1c1a16] sm:text-4xl md:text-5xl md:leading-tight">{title}</h1>
+        {subtitle && <p class="mt-5 text-lg leading-relaxed text-[#5c5a4c] md:text-xl md:leading-relaxed">{subtitle}</p>}
       </header>
 
-      <!-- Optional hero image -->
       {image && (
-        <div class="mb-10 aspect-[21/9] overflow-hidden rounded-2xl bg-stone-100 shadow-sm md:mb-14">
-          <img src={image} alt={title} class="h-full w-full object-cover" />
+        <div class="mb-12 md:mb-16 relative">
+          <div class="aspect-[21/9] overflow-hidden rounded-2xl shadow-lg shadow-[#0f766e]/8">
+            <img src={image} alt={title} class="h-full w-full object-cover" width="1200" height="514" loading="eager" decoding="async" />
+          </div>
+          <div class="organic-blob organic-blob-1 absolute -bottom-8 -right-8 -z-10" style="width:180px;height:180px;"></div>
         </div>
       )}
 
-      <!-- Content -->
-      <div class="prose prose-stone prose-lg max-w-none">
+      <div class="prose prose-stone prose-lg max-w-none scroll-reveal">
         <slot />
       </div>
 
-      <!-- Footer nav -->
-      <footer class="mt-16 border-t border-stone-200 pt-8 md:mt-20">
+      <footer class="mt-20 pt-10 border-t border-[#d5d0c4]">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <a href="/" class="group inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-light">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-hover:-translate-x-0.5"><path d="M15 18l-6-6 6-6"/></svg>
+          <a href="/" class="group inline-flex items-center gap-2 text-sm font-semibold text-[#0f766e] transition-colors hover:text-[#14b8a6]">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-hover:-translate-x-0.5"><path d="M15 18l-6-6 6-6"/></svg>
             Back to homepage
           </a>
-          <p class="text-xs text-stone-400">Last updated: August 2026</p>
+          <p class="text-xs text-[#5c5a4c]/50">Last updated: August 2026</p>
         </div>
       </footer>
     </div>

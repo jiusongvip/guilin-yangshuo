@@ -11,8 +11,6 @@
     "@astrojs/react": "^4.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "motion": "^12.6.0",
-    "@phosphor-icons/react": "^2.1.7",
     "astro": "^5.5.0",
     "@tailwindcss/vite": "^4.1.0",
     "tailwindcss": "^4.1.0"

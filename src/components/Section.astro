@@ -1,8 +1,13 @@
 ---
-const { class: className = "" } = Astro.props;
+const { class: className = "", variant = "default" } = Astro.props;
+const bgClass = variant === "mist" ? "gradient-mist" :
+  variant === "warm" ? "gradient-warm" :
+  variant === "dark" ? "gradient-dark" :
+  variant === "stone" ? "gradient-stone" : "";
+const borderClass = variant === "default" ? "border-t border-[#d5d0c4]" : "";
 ---
-<section class={`py-20 md:py-28 ${className}`}>
-  <div class="mx-auto max-w-7xl px-6">
+<section class={`py-20 md:py-28 ${borderClass} ${bgClass} ${className}`}>
+  <div class="mx-auto max-w-7xl px-6 relative">
     <slot />
   </div>
 </section>

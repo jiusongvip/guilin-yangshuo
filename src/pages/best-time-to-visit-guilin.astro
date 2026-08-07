@@ -6,6 +6,29 @@ import DetailLayout from "../layouts/DetailLayout.astro";
   <h2>Quick Verdict</h2>
   <p><strong>April-May and September-October</strong> are the best months. Pleasant temperatures, minimal rain, and the landscape is at its most photogenic. <strong>Avoid the first week of October</strong> (Golden Week) — extreme crowds and prices.</p>
 
+  <h3>Temperature & Rainfall by Month</h3>
+  <div class="overflow-x-auto mt-6">
+    <table class="w-full text-left text-sm border border-stone-200 rounded-xl overflow-hidden">
+      <thead class="bg-stone-50 text-xs font-semibold uppercase tracking-wider text-stone-400">
+        <tr><th class="px-4 py-2">Month</th><th class="px-4 py-2">Avg High</th><th class="px-4 py-2">Avg Low</th><th class="px-4 py-2">Rain (mm)</th><th class="px-4 py-2">Rain Days</th><th class="px-4 py-2">Crowds</th></tr>
+      </thead>
+      <tbody class="divide-y divide-stone-100">
+        <tr><td class="px-4 py-2 font-medium">Jan</td><td class="px-4 py-2">12°C / 54°F</td><td class="px-4 py-2">5°C / 41°F</td><td class="px-4 py-2">53</td><td class="px-4 py-2">13</td><td class="px-4 py-2 text-green-700">Very low</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-2 font-medium">Feb</td><td class="px-4 py-2">13°C / 55°F</td><td class="px-4 py-2">7°C / 45°F</td><td class="px-4 py-2">71</td><td class="px-4 py-2">14</td><td class="px-4 py-2 text-amber-700">CNY spike</td></tr>
+        <tr><td class="px-4 py-2 font-medium">Mar</td><td class="px-4 py-2">17°C / 63°F</td><td class="px-4 py-2">11°C / 52°F</td><td class="px-4 py-2">109</td><td class="px-4 py-2">18</td><td class="px-4 py-2 text-green-700">Low</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-2 font-medium text-accent">Apr</td><td class="px-4 py-2">23°C / 73°F</td><td class="px-4 py-2">16°C / 61°F</td><td class="px-4 py-2">188</td><td class="px-4 py-2">18</td><td class="px-4 py-2">Moderate</td></tr>
+        <tr><td class="px-4 py-2 font-medium text-accent">May</td><td class="px-4 py-2">27°C / 81°F</td><td class="px-4 py-2">20°C / 68°F</td><td class="px-4 py-2">275</td><td class="px-4 py-2">17</td><td class="px-4 py-2 text-amber-700">Labor Day spike</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-2 font-medium">Jun</td><td class="px-4 py-2">30°C / 86°F</td><td class="px-4 py-2">23°C / 73°F</td><td class="px-4 py-2">334</td><td class="px-4 py-2">18</td><td class="px-4 py-2">Moderate</td></tr>
+        <tr><td class="px-4 py-2 font-medium">Jul</td><td class="px-4 py-2">33°C / 91°F</td><td class="px-4 py-2">25°C / 77°F</td><td class="px-4 py-2">206</td><td class="px-4 py-2">16</td><td class="px-4 py-2 text-green-700">Low (fewer Westerners)</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-2 font-medium">Aug</td><td class="px-4 py-2">33°C / 91°F</td><td class="px-4 py-2">24°C / 75°F</td><td class="px-4 py-2">167</td><td class="px-4 py-2">14</td><td class="px-4 py-2">Moderate</td></tr>
+        <tr><td class="px-4 py-2 font-medium text-accent">Sep</td><td class="px-4 py-2">30°C / 86°F</td><td class="px-4 py-2">21°C / 70°F</td><td class="px-4 py-2">72</td><td class="px-4 py-2">10</td><td class="px-4 py-2">Moderate</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-2 font-medium text-accent">Oct</td><td class="px-4 py-2">25°C / 77°F</td><td class="px-4 py-2">16°C / 61°F</td><td class="px-4 py-2">81</td><td class="px-4 py-2">10</td><td class="px-4 py-2 text-red-700">Golden Week: extreme</td></tr>
+        <tr><td class="px-4 py-2 font-medium">Nov</td><td class="px-4 py-2">19°C / 66°F</td><td class="px-4 py-2">11°C / 52°F</td><td class="px-4 py-2">71</td><td class="px-4 py-2">11</td><td class="px-4 py-2 text-green-700">Low</td></tr>
+        <tr class="bg-stone-50/50"><td class="px-4 py-2 font-medium">Dec</td><td class="px-4 py-2">14°C / 57°F</td><td class="px-4 py-2">5°C / 41°F</td><td class="px-4 py-2">42</td><td class="px-4 py-2">9</td><td class="px-4 py-2 text-green-700">Very low</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h2 class="mt-12">Season by Season</h2>
   <h3>Spring (March-May)</h3>
   <p>The best season. Temperatures range from 15-25 degrees C. March can be rainy, but by April the weather settles. The countryside is lush green, wildflowers bloom, and the Li River water levels are ideal for cruises. May has perfect weather but slightly more domestic tourists around the Labor Day holiday (first week of May).</p>
@@ -36,6 +59,14 @@ import DetailLayout from "../layouts/DetailLayout.astro";
       <div><span class="font-semibold">Dec</span> <span class="text-stone-400">Cold, misty, empty viewpoints</span></div>
     </div>
   </div>
+
+  <h2 class="mt-12">Chinese Holidays to Avoid</h2>
+  <p>Chinese holiday periods dramatically affect prices, crowds, and availability. Plan around these unless you specifically want to experience a festival:</p>
+  <ul>
+    <li><strong>Chinese New Year (late Jan–mid Feb):</strong> The biggest holiday. Everything is packed, domestic flights triple in price, and some small restaurants close for a week. The upside: lantern festivals and fireworks displays in Guilin city are spectacular.</li>
+    <li><strong>Labor Day (May 1–5):</strong> A 5-day spike in domestic tourism. Yangshuo gets busy but it's manageable — book hotels early.</li>
+    <li><strong>Golden Week (Oct 1–7):</strong> The worst time to visit. Hotels cost 3x normal, Li River cruise tickets sell out days in advance, and every viewpoint is shoulder-to-shoulder. Avoid unless you have no other option.</li>
+  </ul>
 
   <div class="mt-12 rounded-2xl border border-stone-200 bg-stone-50 p-6">
     <p class="text-sm font-semibold uppercase tracking-wider text-stone-400">Continue Reading</p>

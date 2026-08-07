@@ -1,12 +1,18 @@
+﻿---
+const { href, image, title, description, color = "default" } = Astro.props;
+const accentBorderClass = color === "warm" ? "hover:border-[#d4a373]/40" :
+  color === "stone" ? "hover:border-[#a8a29e]/40" : "hover:border-[#99f6e4]/30";
 ---
-const { href, image, title, description, accent } = Astro.props;
----
-<a href={href} class="group block overflow-hidden rounded-2xl bg-white border border-stone-200 transition-shadow hover:shadow-lg hover:border-stone-300">
-  <div class="aspect-[16/10] overflow-hidden bg-stone-100">
-    <img src={image} alt={title} width="800" height="500" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+<a href={href} class={`card-playful group block overflow-hidden rounded-2xl bg-white border border-[#d5d0c4]/40 shadow-sm ${accentBorderClass}`}>
+  <div class="aspect-[16/10] overflow-hidden bg-[#edeae3]">
+    <img
+      src={image} alt={title} width="800" height="500"
+      class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+      loading="lazy" decoding="async"
+    />
   </div>
-  <div class="p-5">
-    <h3 class="text-lg font-semibold text-stone-900 group-hover:text-accent transition-colors">{title}</h3>
-    {description && <p class="mt-1.5 text-sm leading-relaxed text-stone-500">{description}</p>}
+  <div class="p-6">
+    <h3 class="text-lg font-bold text-[#1c1a16] group-hover:text-[#0f766e] transition-colors">{title}</h3>
+    {description && <p class="mt-1.5 text-sm leading-relaxed text-[#5c5a4c]">{description}</p>}
   </div>
 </a>
