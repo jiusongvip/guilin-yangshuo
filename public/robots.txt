@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://guilin-yangshuo.com/sitemap.xml
+Sitemap: https://www.guilin-yang-shuo.com/sitemap.xml
 
 User-agent: GPTBot
 Allow: /

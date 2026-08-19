@@ -14,7 +14,9 @@ interface Props {
 const title = Astro.props.title ?? SITE.title;
 const description = Astro.props.description ?? SITE.description;
 const ogImage = Astro.props.ogImage ?? (Astro.props.image ? new URL(Astro.props.image, SITE.url).href : new URL('/images/hero-li-river.webp', SITE.url).href);
-const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const canonical = Astro.url.pathname === '/'
+  ? new URL('/', SITE.url).href.replace(/\/$/, '')
+  : new URL(Astro.url.pathname, SITE.url).href;
 const noIndex = Astro.props.noIndex ?? false;
 const noFollow = Astro.props.noFollow ?? false;
 const path = Astro.url.pathname;
@@ -63,7 +65,7 @@ const path = Astro.url.pathname;
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Guilin & Yangshuo Travel Guide",
-      "url": "https://guilin-yangshuo.com",
+      "url": "https://www.guilin-yang-shuo.com",
       "description": "Independent, honest travel guide for Guilin and Yangshuo — the scenic heart of any China trip. Itineraries, costs, visa advice, and local tips — no tour sales, no fluff.",
       "inLanguage": "en"
     }
@@ -73,8 +75,8 @@ const path = Astro.url.pathname;
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Guilin Yangshuo Travel Guide",
-      "url": "https://guilin-yangshuo.com",
-      "logo": "https://guilin-yangshuo.com/favicon.svg",
+      "url": "https://www.guilin-yang-shuo.com",
+      "logo": "https://www.guilin-yang-shuo.com/favicon.svg",
       "description": "Independent travel guide for Guilin and Yangshuo — the scenic heart of any China trip.",
       "sameAs": []
     }
@@ -141,11 +143,11 @@ const path = Astro.url.pathname;
               </a>
             </li>
           ))}
-          <li><a href="/about" class="nav-link relative px-4 py-2 rounded-full text-[#5c5a4c] transition-all duration-300 hover:text-[#0f766e] hover:bg-[#ccfbf1]/15">
+          <li><a href="/about/" class="nav-link relative px-4 py-2 rounded-full text-[#5c5a4c] transition-all duration-300 hover:text-[#0f766e] hover:bg-[#ccfbf1]/15">
             About<span class="nav-indicator"></span>
           </a></li>
           <li class="ml-3">
-            <a href="/china-trip-builder" class="rounded-full bg-gradient-to-r from-[#0f766e] to-[#2dd4bf] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#0f766e]/15 transition-all hover:shadow-lg hover:shadow-[#0f766e]/20 hover:scale-105">
+            <a href="/china-trip-builder/" class="rounded-full bg-gradient-to-r from-[#0f766e] to-[#2dd4bf] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#0f766e]/15 transition-all hover:shadow-lg hover:shadow-[#0f766e]/20 hover:scale-105">
               Plan My Trip
             </a>
           </li>
@@ -159,12 +161,12 @@ const path = Astro.url.pathname;
           {NAV.map((item) => (
             <li><a href={item.href} class="block rounded-xl px-4 py-3 text-[#5c5a4c] transition-all hover:bg-[#ccfbf1]/10 hover:text-[#0f766e]">{item.label}</a></li>
           ))}
-          <li><a href="/about" class="block rounded-xl px-4 py-3 text-[#5c5a4c] transition-all hover:bg-[#ccfbf1]/10 hover:text-[#0f766e]">About</a></li>
+          <li><a href="/about/" class="block rounded-xl px-4 py-3 text-[#5c5a4c] transition-all hover:bg-[#ccfbf1]/10 hover:text-[#0f766e]">About</a></li>
           <li class="pt-3 mt-1 border-t border-[#d5d0c4]">
-            <a href="/china-trip-builder" class="block rounded-full bg-gradient-to-r from-[#0f766e] to-[#2dd4bf] px-4 py-3 text-center font-semibold text-white">Plan My Trip</a>
+            <a href="/china-trip-builder/" class="block rounded-full bg-gradient-to-r from-[#0f766e] to-[#2dd4bf] px-4 py-3 text-center font-semibold text-white">Plan My Trip</a>
           </li>
-          <li><a href="/guilin-trip-cost-calculator" class="block rounded-xl px-4 py-3 text-[#5c5a4c] hover:bg-[#ccfbf1]/10">Cost Calculator</a></li>
-          <li><a href="/china-packing-list" class="block rounded-xl px-4 py-3 text-[#5c5a4c] hover:bg-[#ccfbf1]/10">Packing List</a></li>
+          <li><a href="/guilin-trip-cost-calculator/" class="block rounded-xl px-4 py-3 text-[#5c5a4c] hover:bg-[#ccfbf1]/10">Cost Calculator</a></li>
+          <li><a href="/china-packing-list/" class="block rounded-xl px-4 py-3 text-[#5c5a4c] hover:bg-[#ccfbf1]/10">Packing List</a></li>
         </ul>
       </div>
     </header>
@@ -188,31 +190,31 @@ const path = Astro.url.pathname;
           <div>
             <p class="text-xs font-bold uppercase tracking-widest text-[#2dd4bf] mb-4">Explore</p>
             <ul class="space-y-3 text-sm">
-              <li><a href="/yangshuo-travel-guide" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Yangshuo Guide</a></li>
-              <li><a href="/guilin-travel-guide" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Guilin Guide</a></li>
-              <li><a href="/li-river-cruise" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Li River Cruise</a></li>
-              <li><a href="/guilin-yangshuo-itinerary-3-day" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">3-Day Itinerary</a></li>
+              <li><a href="/yangshuo-travel-guide/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Yangshuo Guide</a></li>
+              <li><a href="/guilin-travel-guide/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Guilin Guide</a></li>
+              <li><a href="/li-river-cruise/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Li River Cruise</a></li>
+              <li><a href="/guilin-yangshuo-itinerary-3-day/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">3-Day Itinerary</a></li>
             </ul>
           </div>
           <div>
             <p class="text-xs font-bold uppercase tracking-widest text-[#d4a373] mb-4">Plan</p>
             <ul class="space-y-3 text-sm">
-              <li><a href="/guilin-yangshuo-trip-cost" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Trip Cost</a></li>
-              <li><a href="/china-visa" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">China Visa</a></li>
-              <li><a href="/best-time-to-visit-guilin" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Best Time to Visit</a></li>
-              <li><a href="/guilin-to-yangshuo" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Getting There</a></li>
+              <li><a href="/guilin-yangshuo-trip-cost/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Trip Cost</a></li>
+              <li><a href="/china-visa/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">China Visa</a></li>
+              <li><a href="/best-time-to-visit-guilin/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Best Time to Visit</a></li>
+              <li><a href="/guilin-to-yangshuo/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Getting There</a></li>
             </ul>
           </div>
           <div>
             <p class="text-xs font-bold uppercase tracking-widest text-[#78716c] mb-4">Essentials</p>
             <ul class="space-y-3 text-sm">
-              <li><a href="/alipay-wechat-setup" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Mobile Payments</a></li>
-              <li><a href="/china-internet-guide" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Internet & eSIM</a></li>
-              <li><a href="/survival-chinese-phrases" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Chinese Phrases</a></li>
-              <li><a href="/guilin-travel-mistakes" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Mistakes to Avoid</a></li>
-              <li><a href="/china-trip-builder" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Trip Builder</a></li>
-              <li><a href="/guilin-trip-cost-calculator" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Cost Calculator</a></li>
-              <li><a href="/china-packing-list" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Packing List</a></li>
+              <li><a href="/alipay-wechat-setup/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Mobile Payments</a></li>
+              <li><a href="/china-internet-guide/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Internet & eSIM</a></li>
+              <li><a href="/survival-chinese-phrases/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Chinese Phrases</a></li>
+              <li><a href="/guilin-travel-mistakes/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Mistakes to Avoid</a></li>
+              <li><a href="/china-trip-builder/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Trip Builder</a></li>
+              <li><a href="/guilin-trip-cost-calculator/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Cost Calculator</a></li>
+              <li><a href="/china-packing-list/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Packing List</a></li>
             </ul>
           </div>
         </div>

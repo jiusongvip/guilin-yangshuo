@@ -104,7 +104,7 @@ export default function CostCalculator() {
             <p className="font-semibold text-stone-700">${activityCost} total</p>
           </div>
         </div>
-        <p className="mt-4 text-xs text-stone-400">Prices in USD at 2026 rates. Excludes flights, visa fee ($140), and VPN subscription ($5-15). See our <a href="/guilin-yangshuo-trip-cost" class="text-accent underline">full cost guide</a> for detailed breakdowns.</p>
+        <p className="mt-4 text-xs text-stone-400">Prices in USD at 2026 rates. Excludes flights, visa fee ($140), and VPN subscription ($5-15). See our <a href="/guilin-yangshuo-trip-cost/" class="text-accent underline">full cost guide</a> for detailed breakdowns.</p>
       </div>
     </div>
   );

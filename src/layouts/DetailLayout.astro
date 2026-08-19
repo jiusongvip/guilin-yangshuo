@@ -10,7 +10,9 @@ export interface Props {
 }
 
 const { title, subtitle, image, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const canonical = Astro.url.pathname === '/'
+  ? new URL('/', SITE.url).href.replace(/\/$/, '')
+  : new URL(Astro.url.pathname, SITE.url).href;
 
 function toCrumbName(slug: string): string {
   return slug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
@@ -22,7 +24,7 @@ const crumbs = [
   { label: "Home", href: "/" },
   ...segments.map((seg, i) => ({
     label: toCrumbName(seg),
-    href: "/" + segments.slice(0, i + 1).join("/"),
+    href: "/" + segments.slice(0, i + 1).join("/") + "/",
   })),
 ];
 crumbs[crumbs.length - 1].label = title;

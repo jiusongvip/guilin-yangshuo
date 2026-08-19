@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
  integrations: [react(), sitemap()],
-  site: "https://guilin-yang-shuo.com",
+  site: "https://www.guilin-yang-shuo.com",
  vite: { plugins: [tailwindcss()] },
-  trailingSlash: 'never',
+  trailingSlash: 'always',
 });

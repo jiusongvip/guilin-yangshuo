@@ -88,7 +88,7 @@ export default function TripBuilder() {
           <pre className="whitespace-pre-wrap text-sm leading-relaxed text-stone-700 font-sans">{result}</pre>
           <p className="mt-4 text-xs text-stone-400">
             This is a suggested route. Adjust based on your actual flight times and preferences.
-            Check our <a href="/guilin-in-your-china-trip" className="text-accent underline">multi-city guide</a> for detailed connections.
+            Check our <a href="/guilin-in-your-china-trip/" className="text-accent underline">multi-city guide</a> for detailed connections.
           </p>
         </div>
       )}
