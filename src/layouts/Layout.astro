@@ -50,6 +50,7 @@ const path = Astro.url.pathname;
     {!noIndex && <link rel="canonical" href={canonical} />}
     <title>{seoTitle}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={SITE.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -74,6 +75,8 @@ const path = Astro.url.pathname;
       "description": SITE.description,
       "inLanguage": "en",
       "dateModified": SITE.dateModified,
+      "author": { "@type": "Organization", "@id": `${SITE.url}/#organization` },
+      "creator": { "@type": "Organization", "@id": `${SITE.url}/#organization` },
       "publisher": { "@id": `${SITE.url}/#organization` }
     })}></script> : false}
     {path === '/' ? <script type="application/ld+json" set:html={JSON.stringify({

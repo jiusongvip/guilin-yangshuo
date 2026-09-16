@@ -4,6 +4,7 @@ import Section from "../components/Section.astro";
 import CardLink from "../components/CardLink.astro";
 import Map from "../components/Map.astro";
 import Faq from "../components/Faq.astro";
+import { SITE } from "../consts";
 
 const faqItems = [
   { q: "Are Guilin and Yangshuo the same place?", a: "No. Guilin is the city with the airport and train station. Yangshuo is a small town about 65 km south — that's where the iconic karst scenery is. Most people fly into Guilin and head straight to Yangshuo." },
@@ -33,6 +34,7 @@ const faqSchema = {
         <span class="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white mb-6">Independent Travel Guide · 2026</span>
         <h1 class="font-[family-name:var(--font-display)] text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-[7rem] lg:leading-[0.95] drop-shadow-md">Guilin<br/>Yangshuo</h1>
         <p class="mt-6 text-lg leading-relaxed text-white/90 md:text-xl max-w-lg drop-shadow">The landscape that inspired every Chinese painting. Independent advice, real 2026 prices, no fluff.</p>
+        <p class="mt-3 text-sm text-white/85 drop-shadow">By <a href="/about/" class="font-semibold underline decoration-white/40 underline-offset-2 hover:decoration-white">{SITE.name}</a> · Updated <time datetime={SITE.dateModified}>Sep 16, 2026</time></p>
         <div class="mt-6 flex flex-wrap gap-3 text-sm text-white/80">
           <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock text-white/60"></i> 3-5 days</span>
           <span class="text-white/30">·</span>
