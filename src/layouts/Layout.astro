@@ -90,6 +90,7 @@ const path = Astro.url.pathname;
       "email": SITE.email,
       "foundingDate": "2026-08",
       "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": SITE.email, "url": `${SITE.url}/contact/` },
+      "sameAs": ["https://github.com/jiusongvip/guilin-yangshuo"],
       "about": { "@type": "Thing", "name": "Guilin and Yangshuo travel, China" }
     })}></script> : false}
     {Astro.props.image && <script type="application/ld+json" set:html={JSON.stringify({
