@@ -4,7 +4,6 @@ import "../styles/global.css";
 import { SITE, NAV } from "../consts";
 
 const fontsCss = readFileSync(new URL("../../public/fonts/fonts.css", import.meta.url), "utf8");
-const faCss = readFileSync(new URL("../../public/fa/fa.min.css", import.meta.url), "utf8");
 
 interface Props {
   ogImage?: string;
@@ -55,7 +54,6 @@ const path = Astro.url.pathname;
     <link rel="preload" href="/fonts/dmserifdisplay-normal-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/dmsans-normal-400.woff2" as="font" type="font/woff2" crossorigin />
     <style is:inline set:html={fontsCss} />
-    <style is:inline set:html={faCss} />
     {path === '/' && <link rel="preload" href="/images/hero-li-river.webp" as="image" fetchpriority="high" />}
     {!noIndex && <link rel="canonical" href={canonical} />}
     <title>{seoTitle}</title>

@@ -4,9 +4,6 @@
 /fonts/*
   Cache-Control: public, max-age=2592000
 
-/fa/*
-  Cache-Control: public, max-age=2592000
-
 /images/*
   Cache-Control: public, max-age=2592000
 
