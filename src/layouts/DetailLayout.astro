@@ -4,12 +4,14 @@ import { SITE } from "../consts";
 
 export interface Props {
   title: string;
+  seoTitle?: string;
   subtitle?: string;
   image?: string;
   description?: string;
 }
 
 const { title, subtitle, image, description } = Astro.props;
+const seoTitle = Astro.props.seoTitle ?? `${title} - Guilin Yangshuo Guide`;
 const canonical = Astro.url.pathname === '/'
   ? new URL('/', SITE.url).href.replace(/\/$/, '')
   : new URL(Astro.url.pathname, SITE.url).href;
@@ -48,7 +50,7 @@ const jsonLd = JSON.stringify({
 });
 ---
 
-<Layout title={title} description={description} ogImage={image ? new URL(image, SITE.url).href : undefined} image={image}>
+<Layout title={title} seoTitle={seoTitle} description={description} ogImage={image ? new URL(image, SITE.url).href : undefined} image={image}>
   <script type="application/ld+json" set:html={jsonLd}></script>
 
   <article class="pt-28 pb-8 md:pt-36 md:pb-14">

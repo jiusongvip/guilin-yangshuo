@@ -2,54 +2,70 @@
 const { class: className = "" } = Astro.props;
 ---
 <div class={`mt-8 overflow-hidden rounded-2xl border border-[#d5d0c4] shadow-sm ${className}`} style="height: 420px;">
-  <div id="guilin-map" style="width: 100%; height: 100%;"></div>
+  <div id="guilin-map" role="img" aria-label="Interactive map of Guilin, Yangshuo, and the Li River cruise route" style="width: 100%; height: 100%;"></div>
 </div>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <script>
   (function () {
-    if (typeof L === 'undefined') {
-      const script = document.createElement('script');
-      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-      script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
-      script.crossOrigin = '';
-      script.onload = initMap;
-      document.head.appendChild(script);
-    } else { initMap(); }
+    const container = document.getElementById('guilin-map');
+    if (!container) return;
+    const start = () => {
+      if (container.dataset.initialized) return;
+      container.dataset.initialized = '1';
+      if (typeof L === 'undefined') {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        css.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+        css.crossOrigin = '';
+        document.head.appendChild(css);
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+        script.crossOrigin = '';
+        script.onload = initMap;
+        document.head.appendChild(script);
+      } else { initMap(); }
+    };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) { io.disconnect(); start(); }
+      }, { rootMargin: '300px' });
+      io.observe(container);
+    } else { start(); }
 
     function initMap() {
-      const container = document.getElementById('guilin-map');
-      if (!container || container.dataset.initialized) return;
-      container.dataset.initialized = '1';
+      if (!container || container.dataset.ready) return;
+      container.dataset.ready = '1';
       const map = L.map('guilin-map', { center: [25.05, 110.35], zoom: 10, scrollWheelZoom: false, zoomControl: true });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 18 }).addTo(map);
 
       const guilinIcon = L.divIcon({
         className: 'map-marker-city',
-        html: '<div style="background:#0f766e;color:#fff;padding:4px 12px;border-radius:10px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(26,58,74,0.3);border:2px solid #fff;"><i class="fa-solid fa-city" style="margin-right:4px;"></i>Guilin</div>',
+        html: '<div role="img" aria-label="Guilin" style="background:#0f766e;color:#fff;padding:4px 12px;border-radius:10px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(26,58,74,0.3);border:2px solid #fff;"><i class="fa-solid fa-city" style="margin-right:4px;" aria-hidden="true"></i>Guilin</div>',
         iconAnchor: [30, 14],
       });
-      L.marker([25.273, 110.290], { icon: guilinIcon }).addTo(map).bindPopup('<b>Guilin City</b><br>Train stations, hotels, city lakes');
+      L.marker([25.273, 110.290], { icon: guilinIcon, keyboard: false, title: 'Guilin City', alt: 'Guilin City' }).addTo(map).bindPopup('<b>Guilin City</b><br>Train stations, hotels, city lakes');
 
       const airportIcon = L.divIcon({
         className: 'map-marker-airport',
-        html: '<div style="display:flex;align-items:center;gap:4px;background:#5eead4;color:#fff;padding:4px 10px;border-radius:10px;font-size:11px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(91,138,154,0.3);border:2px solid #fff;"><i class="fa-solid fa-plane"></i> KWL</div>',
+        html: '<div role="img" aria-label="Guilin Liangjiang Airport KWL" style="display:flex;align-items:center;gap:4px;background:#5eead4;color:#fff;padding:4px 10px;border-radius:10px;font-size:11px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(91,138,154,0.3);border:2px solid #fff;"><i class="fa-solid fa-plane" aria-hidden="true"></i> KWL</div>',
         iconAnchor: [25, 14],
       });
-      L.marker([25.218, 110.039], { icon: airportIcon }).addTo(map).bindPopup('<b>Guilin Liangjiang Airport (KWL)</b><br>30 km from Guilin city center');
+      L.marker([25.218, 110.039], { icon: airportIcon, keyboard: false, title: 'Guilin Liangjiang Airport (KWL)', alt: 'Guilin Liangjiang Airport' }).addTo(map).bindPopup('<b>Guilin Liangjiang Airport (KWL)</b><br>30 km from Guilin city center');
 
       const xingpingIcon = L.divIcon({
         className: 'map-marker-viewpoint',
-        html: '<div style="background:#d4a373;color:#fff;padding:4px 10px;border-radius:10px;font-size:11px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(196,168,130,0.3);border:2px solid #fff;"><i class="fa-solid fa-location-dot"></i></div>',
+        html: '<div role="img" aria-label="Xingping viewpoint" style="background:#d4a373;color:#fff;padding:4px 10px;border-radius:10px;font-size:11px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(196,168,130,0.3);border:2px solid #fff;"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>',
         iconAnchor: [12, 6],
       });
-      L.marker([24.920, 110.528], { icon: xingpingIcon }).addTo(map).bindPopup('<b>Xingping</b><br>20 RMB note viewpoint');
+      L.marker([24.920, 110.528], { icon: xingpingIcon, keyboard: false, title: 'Xingping', alt: 'Xingping 20 RMB note viewpoint' }).addTo(map).bindPopup('<b>Xingping</b><br>20 RMB note viewpoint');
 
       const yangshuoIcon = L.divIcon({
         className: 'map-marker-city',
-        html: '<div style="background:#5eead4;color:#fff;padding:4px 12px;border-radius:10px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(91,138,154,0.3);border:2px solid #fff;"><i class="fa-solid fa-mountain" style="margin-right:4px;"></i>Yangshuo</div>',
+        html: '<div role="img" aria-label="Yangshuo" style="background:#5eead4;color:#fff;padding:4px 12px;border-radius:10px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(91,138,154,0.3);border:2px solid #fff;"><i class="fa-solid fa-mountain" style="margin-right:4px;" aria-hidden="true"></i>Yangshuo</div>',
         iconAnchor: [36, 14],
       });
-      L.marker([24.778, 110.497], { icon: yangshuoIcon }).addTo(map).bindPopup('<b>Yangshuo</b><br>Karst peaks, West Street');
+      L.marker([24.778, 110.497], { icon: yangshuoIcon, keyboard: false, title: 'Yangshuo', alt: 'Yangshuo' }).addTo(map).bindPopup('<b>Yangshuo</b><br>Karst peaks, West Street');
 
       const riverRoute = [[25.273,110.290],[25.240,110.340],[25.200,110.390],[25.150,110.430],[25.110,110.460],[25.060,110.490],[25.000,110.510],[24.960,110.520],[24.920,110.528],[24.880,110.515],[24.830,110.502],[24.778,110.497]];
       L.polyline(riverRoute, { color: '#5eead4', weight: 3, opacity: 0.5, dashArray: '8 4' }).addTo(map).bindPopup('<b>Li River Cruise Route</b><br>~83 km · ~4 hours');

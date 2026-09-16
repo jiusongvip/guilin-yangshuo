@@ -1,10 +1,15 @@
 ﻿---
+import { readFileSync } from "node:fs";
 import "../styles/global.css";
 import { SITE, NAV } from "../consts";
+
+const fontsCss = readFileSync(new URL("../../public/fonts/fonts.css", import.meta.url), "utf8");
+const faCss = readFileSync(new URL("../../public/fa/fa.min.css", import.meta.url), "utf8");
 
 interface Props {
   ogImage?: string;
   title?: string;
+  seoTitle?: string;
   description?: string;
   noIndex?: boolean;
   noFollow?: boolean;
@@ -12,6 +17,7 @@ interface Props {
 }
 
 const title = Astro.props.title ?? SITE.title;
+const seoTitle = Astro.props.seoTitle ?? title;
 const description = Astro.props.description ?? SITE.description;
 const ogImage = Astro.props.ogImage ?? (Astro.props.image ? new URL(Astro.props.image, SITE.url).href : new URL('/images/hero-li-river.webp', SITE.url).href);
 const canonical = Astro.url.pathname === '/'
@@ -36,13 +42,13 @@ const path = Astro.url.pathname;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/dmserifdisplay-normal-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/dmsans-normal-400.woff2" as="font" type="font/woff2" crossorigin />
+    <style is:inline set:html={fontsCss} />
+    <style is:inline set:html={faCss} />
+    {path === '/' && <link rel="preload" href="/images/hero-li-river.webp" as="image" fetchpriority="high" />}
     {!noIndex && <link rel="canonical" href={canonical} />}
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <title>{title}</title>
+    <title>{seoTitle}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
