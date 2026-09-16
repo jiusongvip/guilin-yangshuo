@@ -7,3 +7,10 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+assets-fonts-orig/
+.tmp-fonts/
+used-cps.txt
+scripts/_gen-assets.mjs
+scripts/_subset.mjs
+live-home.html
+

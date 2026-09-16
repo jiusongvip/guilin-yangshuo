@@ -6,6 +6,6 @@ const { text, author, role } = Astro.props;
   <p class="text-lg leading-relaxed text-[#1c1a16] pl-6">{text}</p>
   <footer class="mt-4 text-sm text-[#5c5a4c] pl-6">
     <cite class="not-italic font-semibold text-[#0f766e]">{author}</cite>
-    {role && <span class="text-[#5c5a4c]/60">, {role}</span>}
+    {role && <span class="text-[#5c5a4c]">, {role}</span>}
   </footer>
 </blockquote>
