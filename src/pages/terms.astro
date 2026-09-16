@@ -1,0 +1,27 @@
+---
+import DetailLayout from "../layouts/DetailLayout.astro";
+import { SITE } from "../consts";
+---
+<DetailLayout seoTitle="Terms of Use - Guilin & Yangshuo Travel Guide" title="Terms of Use" subtitle="The ground rules for reading and reusing this travel guide." description="Terms of use for the Guilin & Yangshuo Travel Guide. Content is general information, prices and rules change, and short quotes are fine with attribution.">
+  <p class="text-sm text-[#5c5a4c]/70">Last updated: <time datetime={SITE.dateModified}>September 16, 2026</time></p>
+
+  <h2>Informational Purposes Only</h2>
+  <p>All content on this site is general travel information based on our own research and first-hand experience. It is not professional, legal, medical, or financial advice. Prices, schedules, visa rules, and opening hours change constantly — always confirm critical details (especially visas, transport bookings, and park access) with the relevant official source before you travel.</p>
+
+  <h2>No Guarantees</h2>
+  <p>We work to keep this guide accurate and current, but we make no warranty that information is complete, accurate, or up to date at the moment you read it. We are not liable for losses arising from reliance on this site — missed boats, wrong turns, disappointing hotels, or blown budgets included.</p>
+
+  <h2>Your Use of the Content</h2>
+  <ul>
+    <li>You may freely read, link to, and share our pages.</li>
+    <li>You may quote short extracts for review, criticism, or your own travel planning, provided you attribute them to <strong>Guilin &amp; Yangshuo Travel Guide</strong> and link back to the original page.</li>
+    <li>You may not republish our guides wholesale, scrape them in bulk, or present them as your own content.</li>
+    <li>All original text and images on this site are © Guilin &amp; Yangshuo Travel Guide.</li>
+  </ul>
+
+  <h2>No Affiliation</h2>
+  <p>We are independent. We are not affiliated with, endorsed by, or compensated by any government tourism body, airline, railway, hotel group, or tour operator. Any brands or venues mentioned are named because we judged them worth mentioning, not because they paid us. Third-party names and marks belong to their owners.</p>
+
+  <h2>Changes to These Terms</h2>
+  <p>We may update these terms as the site evolves. Continued use of the site after changes means you accept them. Questions? Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+</DetailLayout>

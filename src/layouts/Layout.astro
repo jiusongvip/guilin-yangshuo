@@ -55,8 +55,8 @@ const path = Astro.url.pathname;
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:site_name" content={SITE.name} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -66,27 +66,29 @@ const path = Astro.url.pathname;
     <meta property="og:locale" content="en_US" />
     <meta name="keywords" content="China travel, Guilin travel guide, Yangshuo travel guide, Guilin Yangshuo itinerary, Li River cruise, China travel tips, Guilin things to do, Yangshuo hotels, Guilin to Yangshuo, China trip planner" />
     {(noIndex || noFollow) && <meta name="robots" content={`${noIndex ? 'noindex' : ''}, ${noFollow ? 'nofollow' : ''}`} />}
-    {path === '/' ? <script type="application/ld+json">
-    {
+    {path === '/' ? <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Guilin & Yangshuo Travel Guide",
-      "url": "https://www.guilin-yang-shuo.com",
-      "description": "Independent, honest travel guide for Guilin and Yangshuo — the scenic heart of any China trip. Itineraries, costs, visa advice, and local tips — no tour sales, no fluff.",
-      "inLanguage": "en"
-    }
-    </script> : false}
-    {path === '/' ? <script type="application/ld+json">
-    {
+      "name": SITE.name,
+      "url": SITE.url,
+      "description": SITE.description,
+      "inLanguage": "en",
+      "dateModified": SITE.dateModified,
+      "publisher": { "@id": `${SITE.url}/#organization` }
+    })}></script> : false}
+    {path === '/' ? <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Guilin Yangshuo Travel Guide",
-      "url": "https://www.guilin-yang-shuo.com",
-      "logo": "https://www.guilin-yang-shuo.com/favicon.svg",
+      "@id": `${SITE.url}/#organization`,
+      "name": SITE.name,
+      "url": SITE.url,
+      "logo": { "@type": "ImageObject", "url": `${SITE.url}/favicon.svg`, "width": 64, "height": 64 },
       "description": "Independent travel guide for Guilin and Yangshuo — the scenic heart of any China trip.",
-      "sameAs": []
-    }
-    </script> : false}
+      "email": SITE.email,
+      "foundingDate": "2026-08",
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": SITE.email, "url": `${SITE.url}/contact/` },
+      "about": { "@type": "Thing", "name": "Guilin and Yangshuo travel, China" }
+    })}></script> : false}
     {Astro.props.image && <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ImageObject",
@@ -221,11 +223,18 @@ const path = Astro.url.pathname;
               <li><a href="/china-trip-builder/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Trip Builder</a></li>
               <li><a href="/guilin-trip-cost-calculator/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Cost Calculator</a></li>
               <li><a href="/china-packing-list/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Packing List</a></li>
+              <li><a href="/contact/" class="text-[#5c5a4c] transition-colors hover:text-[#0f766e]">Contact</a></li>
             </ul>
           </div>
         </div>
         <div class="mt-12 pt-8 border-t border-[#d5d0c4] text-center">
           <p class="text-xs text-[#5c5a4c]/60">Independent travel guide. Not affiliated with any tour agency or hotel.</p>
+          <p class="mt-3 text-xs text-[#5c5a4c]/60">
+            <a href="/about/" class="transition-colors hover:text-[#0f766e]">About</a> ·
+            <a href="/contact/" class="transition-colors hover:text-[#0f766e]">Contact</a> ·
+            <a href="/privacy/" class="transition-colors hover:text-[#0f766e]">Privacy Policy</a> ·
+            <a href="/terms/" class="transition-colors hover:text-[#0f766e]">Terms of Use</a>
+          </p>
         </div>
       </div>
     </footer>
