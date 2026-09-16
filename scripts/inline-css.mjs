@@ -17,7 +17,8 @@ function* htmlFiles(dir) {
 const cache = new Map();
 function cssBody(href) {
   if (!cache.has(href)) {
-    const file = join(dist, href.replace(/^\//, "").replace(/\//g, "\\").split(/[?#]/)[0]);
+    const rel = decodeURIComponent(href.split("?")[0].split("#")[0]).replace(/^\//, "").split("/");
+    const file = join(dist, ...rel);
     cache.set(href, readFileSync(file, "utf8"));
   }
   return cache.get(href);
